@@ -1,0 +1,377 @@
+Services d'IA
+Réunions
+Autorisation requise
+Rétablir les valeurs par défaut
+Autoriser
+Retirer
+Ajouter une app
+Modules
+App
+Ouvrir à l'ouverture de session
+Afficher dans la barre des menus
+Langue de l'app
+Comme le système
+Relancer
+La langue change après la relance
+Vitesse des animations
+Plus rapide
+Normale
+Plus calme
+Autorisations
+L'enregistrement d'écran s'applique après la relance.
+Écran
+Tous les écrans
+Rubrique
+Favoris
+Mes vidéos
+Retirer de la liste
+Touchez le cœur d'un fond d'écran et il apparaîtra ici.
+Chercher en ligne
+Ajouter une vidéo…
+Votre vidéo
+MP4 ou MOV, sans son. Le fichier reste à sa place.
+Fonds d'écran
+L'animation démarre au survol. Les vidéos téléchargeables sont offertes par la NASA, qui ne cautionne pas Singluse.
+Lecture
+Vitesse
+Fluidité
+30 i/s, économie d'énergie
+60 i/s
+120 i/s
+Qualité
+Économe
+Standard
+Élevée
+Maximale (forte charge)
+Changer de fond d'écran
+Jamais
+Toutes les 15 minutes
+Toutes les heures
+Tous les jours
+Fonctionner sur batterie
+Pause si la charge est sous %lld%%
+Pause si le bureau est couvert
+Alimentation
+Les fonds animés sollicitent le GPU et la batterie. Quand le bureau n'est pas visible, ils ne consomment rien.
+Image du fond sur l'écran verrouillé
+Écran verrouillé
+macOS ne permet pas d'y afficher de vidéo : une telle fenêtre masquerait le champ du mot de passe. Une image fixe de ce fond est donc utilisée. Elle remplace l'image du bureau, et l'originale revient à la désactivation. Capot fermé, l'écran intégré est éteint et rien ne s'affiche.
+Activer
+En pause : le fonctionnement sur batterie est désactivé
+Lire quand même
+En pause : charge sous %lld%%
+En pause : mode économie d'énergie activé
+En pause : le bureau est couvert par des fenêtres
+Choisissez une vidéo pour votre bureau
+%lld Mo
+Source : NASA · %lld Mo
+Fermer
+Télécharger
+Réessayer
+Annuler
+Supprimer le fichier
+Installer
+Souris
+Calibrer
+Pas encore réglée pour cette souris
+Souris connectée
+Le calibrage mesure le fonctionnement de la molette de cette souris et choisit la fluidité. Les réglages s'activent seuls à la connexion.
+Sensation
+Mode
+Personnalisé
+Sens inversé
+Réglage fin
+Essayez avec la molette
+Ligne %lld
+Activez le module et accordez l'autorisation pour commencer.
+Données insuffisantes. Tournez la molette plus longtemps.
+Tournez la molette de haut en bas comme pour lire une page.
+Annuler
+Encore une fois
+Appliquer
+Touche
+Bref son au début et à la fin
+Commandes
+Maintenez la touche en parlant ou appuyez deux fois : l'enregistrement se fait seul et l'appui suivant l'arrête. Sans champ de texte, le texte reste dans le presse-papiers.
+Reconnaissance
+Langue
+Deuxième langue
+Aucune
+Micro
+Moteur
+Singluse sur ce Mac
+Apple sur ce Mac
+Cloud OpenAI
+Ajoutez une clé OpenAI dans « Services d'IA ». Le Mac est utilisé en attendant.
+Télécharger
+Le modèle de langue n'est pas téléchargé
+Téléchargé une fois depuis Apple, puis fonctionne hors ligne
+Révision par IA
+Désactivée
+Soignée
+Style professionnel
+Instructions personnelles
+Service
+Ajoutez la clé de ce service dans « Services d'IA ».
+Par exemple : écris plus court, sans émotion
+Révision
+Le modèle Singluse ajoute la ponctuation tout seul. La révision sert à retirer les répétitions ou changer le style : elle envoie le texte au service choisi et utilise votre solde.
+Mon dictionnaire
+Noms et termes séparés par des virgules. La reconnaissance attendra exactement cette orthographe.
+Essayez ici
+Placez le curseur dans le champ ci-dessus et maintenez la touche
+Écoute…
+Traitement…
+Tel que dit
+Professionnel
+Familier
+Style par app
+Sans IA, le style familier retire seulement le point final d'un message court. La révision par IA change vraiment le ton.
+Conserver l'historique
+Rechercher
+Tout ce que vous dictez apparaîtra ici.
+Effacer…
+Historique
+Conservé uniquement sur ce Mac.
+Supprimer tout l'historique de dictée ?
+Supprimer
+Non inséré
+Copier
+Enregistrement en cours de sauvegarde…
+Enregistrement de réunion
+Micro et son de l'ordinateur, texte dans Notes et dans Singluse
+Prévenez les participants de l'enregistrement : certains pays l'exigent par la loi. Les notes vont dans le dossier « %@ ». La voix est traitée sur ce Mac.
+En cours
+Enregistrements
+Aucun enregistrement pour l'instant.
+%@ · %lld répliques
+OK
+Aucune parole reconnue.
+Copier le texte
+Ouvrir dans Notes
+Supprimer de Singluse…
+Supprimer l'enregistrement de Singluse ? La note restera.
+Supprimer le modèle Singluse du disque ?
+Téléchargement du modèle : %lld%%
+Chargement du modèle
+Modèle prêt
+Le modèle n'est pas chargé en mémoire
+Modèle requis, %@
+Votre voix ne quitte pas ce Mac. Basé sur les projets ouverts Whisper et WhisperKit.
+La première fois après le téléchargement peut prendre quelques minutes
+Téléchargé une fois. En attendant, le moteur d'Apple est utilisé.
+Comportement
+Délai d'apparition
+Délai de masquage
+Apparence
+Taille des miniatures
+Petites
+Moyennes
+Grandes
+Afficher les titres des fenêtres
+Sélecteur de fenêtres ⌥Tab
+Maintenez ⌥ et appuyez sur Tab pour voir les miniatures de toutes les fenêtres de ce bureau. Relâchez ⌥ pour ouvrir la fenêtre choisie. ⇧ revient en arrière, esc annule.
+Copiez quelque chose et cela apparaîtra ici.
+Ouvrir le panneau
+Réglages
+Touches
+Éléments à conserver
+Supprimer après
+Un jour
+Une semaine
+Un mois
+Effacer l'historique ? Les éléments épinglés resteront.
+Effacer
+Pages
+Délai d'ouverture
+Afficher sur tous les écrans
+Léger retour du trackpad à l'ouverture
+Pochette et position du morceau
+Nécessaire uniquement pour les boutons de lecture.
+Les clés sont dans le trousseau de ce Mac et envoyées uniquement au service lui-même. Les services ne fournissent pas les limites d'abonnement par API : la page des limites s'ouvre donc ici, et les dépenses d'API viennent des rapports officiels.
+Ouvrir
+Dans le navigateur
+Connexion et limites
+Où obtenir une clé
+Ouvrir la page
+Modèle
+Google ne communique pas les dépenses par clé d'API : elles ne sont visibles que sur la page d'utilisation.
+Supprimer les clés
+Enregistrer
+Connectez-vous à votre compte si la page le demande.
+%@ Si la connexion ne s'ouvre pas, utilisez le bouton « Dans le navigateur ».
+Fonds animés
+Souris fluide
+Saisie vocale
+Aperçus du Dock
+Presse-papiers
+Encoche intelligente
+Bureau animé
+La molette défile en douceur, comme un trackpad
+Maintenez la touche, parlez, et le texte apparaît au curseur
+Miniatures des fenêtres au survol d'une icône
+Tout ce que vous copiez, toujours à portée de main
+Musique, fichiers et presse-papiers, comme la Dynamic Island
+⌥ Option droite
+⌘ Command droite
+⌃ Contrôle droite
+fn (Globe)
+Le plus fluide
+Équilibré
+Rapide
+Accessibilité
+Enregistrement d'écran
+Reconnaissance vocale
+Défilement, raccourcis, insertion de texte et contrôle des fenêtres
+Miniatures des fenêtres pour les aperçus du Dock
+Entendre votre voix quand la touche est maintenue
+Transformer la voix en texte
+Arrêter l'enregistrement de réunion
+Démarrer l'enregistrement de réunion
+Musique
+Étagère à fichiers
+Dépenses d'IA
+Le texte est enregistré dans Notes et dans Singluse
+Faites glisser des fichiers ici
+Ce que vous copiez apparaîtra ici
+Connectez l'IA dans les réglages de Singluse
+Le moteur n'a pas accepté le format audio
+Cette langue n'est pas prise en charge sur votre Mac
+Impossible d'activer le micro
+Pas de micro
+Pas de champ de texte, le texte est dans le presse-papiers
+environ 630 Mo
+Le modèle n'est pas encore prêt
+Limites d'abonnement Claude
+Limites de ChatGPT et Codex
+Utilisation de l'API Gemini
+Clé d'administration (sk-ant-admin…) de Claude Console
+Clé d'administration des réglages de votre organisation OpenAI
+Limite de requêtes atteinte (429)
+Claude a refusé de traiter le texte
+Google ne propose pas ce rapport par clé
+Connecté
+Technologie
+Espace
+Villes
+Tendance
+Nature
+Grille néon
+Flux de données
+Puce
+Onde numérique
+Hyperespace
+Planète à anneaux
+Trou noir
+Nébuleuse
+Ville néon
+Lumières de la ville
+Coucher de soleil sur la ville
+Synthwave
+Chrome liquide
+Lampe à lave
+Prisme
+Lumière douce
+Soie liquide
+Aurore boréale
+Dunes au couchant
+Océan au clair de lune
+Forêt dans la brume
+Moi
+Autres
+Écran introuvable
+L'enregistrement de réunions nécessite le modèle Singluse prêt : choisissez-le dans « Saisie vocale ».
+L'autorisation du micro est requise.
+Réunion
+Les autres participants ne sont pas enregistrés : l'autorisation d'enregistrement d'écran est requise.
+Impossible d'enregistrer dans Notes : vérifiez l'autorisation dans Réglages Système. L'enregistrement est conservé dans Singluse.
+Quitter l'app
+Fermer la fenêtre
+Réduire la fenêtre
+Plein écran
+Rechercher dans l'historique
+coller
+choisir
+rapide
+fermer
+Image
+Général
+Sans lissage
+Dans ces apps, comme les jeux, la molette fonctionne normalement. Le trackpad n'est jamais concerné.
+Sans aperçu
+Aucune carte ne s'affichera pour ces apps.
+Ne pas enregistrer
+Ce que vous copiez depuis ces apps n'entre pas dans l'historique. Les données marquées secrètes par les gestionnaires de mots de passe ne sont jamais conservées. Les éléments épinglés restent après effacement.
+7 derniers jours
+31 derniers jours
+Ouvrir Singluse
+Historique du presse-papiers
+Quitter
+Quitter Singluse
+Édition
+Rétablir
+Couper
+Copier
+Coller
+Tout sélectionner
+Fenêtre
+Réduire
+Clé enregistrée
+Non connecté
+Molette à crans
+Molette lisse
+Réglée pour molette à crans
+Réglée pour molette lisse
+Rythme : %lld crans par seconde
+Clé refusée (%lld)
+Erreur du service (%lld)
+La Terre depuis l'ISS
+La Terre en 4K, expédition 65
+Éruption solaire
+Une année du Soleil
+Mars : cratère Jezero
+La Grande Tache rouge de Jupiter
+Saturne vue par Cassini
+Démarrer
+Arrêter
+Insérer le texte immédiatement
+Maintenez la touche en parlant ou appuyez deux fois : l'enregistrement se fait seul et l'appui suivant l'arrête. Sans champ de texte, le texte reste dans le presse-papiers. Avec l'insertion immédiate, un brouillon apparaît aussitôt puis est remplacé par le texte exact une seconde plus tard.
+Touchez un fond d'écran pour l'installer aussitôt. Vidéos de Mixkit, photos de Wikimedia Commons : téléchargées sur ce Mac pour un usage personnel.
+Le texte exact est dans le presse-papiers
+À l’écoute
+Minuteur
+Traducteur
+Limites d’IA
+Temps écoulé
+Arrêter
+Reprendre
+Pause
++1 min
+min
+Démarrer
+Saisissez un mot ou une phrase
+Hors ligne, avec les modèles d’Apple. Entrée copie la traduction.
+Le modèle de langue n’est pas encore téléchargé.
+Apple ne traduit pas entre ces langues.
+Traduction impossible.
+Détecter automatiquement
+Téléchargé
+Langues du traducteur
+La traduction fonctionne hors ligne avec les modèles d’Apple. Chaque modèle est téléchargé une fois ; gérez-les dans Réglages Système, section Langue et région.
+5 heures
+Semaine
+Connectez-vous à Claude et ChatGPT pour voir les limites
+Ouvrir les réglages
+Durée prédéfinie
+Son de fin
+Aucun
+Les clés sont stockées dans le trousseau de ce Mac et envoyées uniquement au service. Connectez-vous une fois sur la page des limites et l’encoche affichera vos limites d’abonnement. Les dépenses API proviennent des rapports officiels.
+Ouvrir le lien de l’e-mail
+Le presse-papiers ne contient aucun lien de ce service. Copiez à nouveau le lien de l’e-mail.
+Vous avez reçu un lien de connexion ? Ne l’ouvrez pas : faites un clic droit, choisissez Copier le lien, puis utilisez le bouton ci-dessus.
+Ce qui figure dans le centre de contrôle
+Activer les fonds d’écran
+Désactivez pour rétablir le fond d’écran de macOS sur tous les écrans et bureaux. Singluse n’y touchera plus.
+Monter
+Descendre
+Les pages activées apparaissent en premier, dans l’ordre où elles défilent dans l’encoche. Réorganisez-les avec les flèches ou en les faisant glisser.

@@ -1,0 +1,10 @@
+# Сборка
+.build/
+build/
+.swiftpm/
+*.xcuserstate
+xcuserdata/
+DerivedData/
+
+# macOS
+.DS_Store

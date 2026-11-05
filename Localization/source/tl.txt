@@ -1,0 +1,377 @@
+Mga Serbisyo ng AI
+Mga Pulong
+Kailangan ng pahintulot
+Ibalik ang Default
+Payagan
+Alisin
+Magdagdag ng App
+Mga Module
+App
+Buksan sa Pag-login
+Ipakita sa Menu Bar
+Wika ng App
+Pareho sa System
+I-restart
+Magbabago ang wika pagkatapos mag-restart
+Bilis ng Animation
+Mas mabilis
+Karaniwan
+Mas kalmado
+Mga Pahintulot
+Magkakabisa ang Screen Recording pagkatapos mag-restart.
+Screen
+Lahat ng Screen
+Seksyon
+Mga Paborito
+Aking mga Video
+Alisin sa Listahan
+Pindutin ang puso sa wallpaper at lalabas ito rito.
+Maghanap Online
+Magdagdag ng Video…
+Iyong Video
+MP4 o MOV, walang tunog. Mananatili ang file sa lugar nito.
+Mga Wallpaper
+Tumatakbo ang animation kapag itinapat ang cursor. Ang mga video ay mula sa NASA, na hindi nag-eendorso ng Singluse.
+Pag-play
+Bilis
+Kinis
+30 fps, tipid sa kuryente
+60 fps
+120 fps
+Kalidad
+Tipid
+Karaniwan
+Mataas
+Pinakamataas (mabigat)
+Palitan ang Wallpaper
+Hindi kailanman
+Bawat 15 Minuto
+Bawat Oras
+Araw-araw
+Tumakbo sa Baterya
+I-pause kapag mas mababa sa %lld%% ang karga
+I-pause kapag natatakpan ang desktop
+Kuryente
+Gumagamit ng GPU at baterya ang mga live wallpaper. Kapag hindi nakikita ang desktop, wala silang ginagamit.
+Larawan ng Wallpaper sa Lock Screen
+Lock Screen
+Hindi pinapayagan ng macOS ang live video roon: matatakpan ng ganoong window ang field ng password. Kaya ginagamit ang isang larawan mula sa wallpaper na ito. Papalitan nito ang larawan ng desktop, at babalik ang orihinal kapag pinatay. Kapag nakasara ang takip, patay ang built-in na screen kaya walang lalabas.
+I-on
+Naka-pause: naka-off ang pagtakbo sa baterya
+I-play Pa Rin
+Naka-pause: mas mababa sa %lld%% ang karga
+Naka-pause: naka-on ang Low Power Mode
+Naka-pause: natatakpan ng mga window ang desktop
+Pumili ng video para sa desktop
+%lld MB
+Pinagmulan: NASA · %lld MB
+Isara
+I-download
+Subukan Muli
+Kanselahin
+Burahin ang File
+I-install
+Mouse
+I-calibrate
+Hindi pa nakaayos para sa mouse na ito
+Nakakonektang Mouse
+Sinusukat ng calibration kung paano gumagana ang gulong ng mouse na ito at pinipili ang kinis. Kusang gagana ang mga setting kapag ikinonekta.
+Pakiramdam
+Mode
+Sarili
+Baligtad na Direksyon
+Pinong Pag-aayos
+Subukan gamit ang Gulong
+Linya %lld
+I-on ang module at magbigay ng pahintulot para magsimula.
+Kulang ang datos. Paikutin nang mas matagal ang gulong.
+Paikutin ang gulong pataas at pababa gaya ng pagbasa ng pahina.
+Kanselahin
+Isa Pa
+Ilapat
+Key
+Maikling tunog sa simula at dulo
+Mga Kontrol
+Pindutin nang matagal ang key habang nagsasalita, o pindutin nang dalawang beses: kusang magre-record at hihinto sa susunod na pindot. Kung walang text field, mananatili ang teksto sa clipboard.
+Pagkilala
+Wika
+Pangalawang Wika
+Wala
+Mikropono
+Engine
+Singluse sa Mac na ito
+Apple sa Mac na ito
+OpenAI Cloud
+Magdagdag ng OpenAI key sa “Mga Serbisyo ng AI”. Mac muna ang gagamitin.
+I-download
+Hindi pa na-download ang modelo ng wika
+Isang beses ida-download mula sa Apple, pagkatapos gagana offline
+Pag-edit ng AI
+Naka-off
+Maayos
+Pormal na Estilo
+Sariling Tagubilin
+Serbisyo
+Idagdag ang key ng serbisyong ito sa “Mga Serbisyo ng AI”.
+Halimbawa: sumulat nang mas maikli, walang emosyon
+Pag-edit
+Kusang naglalagay ng bantas ang modelong Singluse. Ang pag-edit ay para mag-alis ng pag-uulit o magpalit ng estilo: ipinapadala nito ang teksto sa napiling serbisyo at ginagamit ang iyong balanse.
+Aking Diksyunaryo
+Mga pangalan at termino na pinaghihiwalay ng kuwit. Aasahan ng pagkilala ang ganitong baybay.
+Subukan Dito
+Ilagay ang cursor sa field sa itaas at pindutin nang matagal ang key
+Nakikinig…
+Pinoproseso…
+Gaya ng Sinabi
+Pormal
+Kaswal
+Estilo bawat App
+Kung walang AI, inaalis lang ng kaswal na estilo ang tuldok sa dulo ng maikling mensahe. Ang Pag-edit ng AI ang tunay na nagbabago ng tono.
+Panatilihin ang History
+Maghanap
+Lalabas dito ang lahat ng idinikta mo.
+Burahin…
+History
+Sa Mac na ito lang nakaimbak.
+Burahin ang buong history ng pagdidikta?
+Burahin
+Hindi Naipasok
+Kopyahin
+Sine-save ang recording…
+Recording ng Pulong
+Mikropono at tunog ng computer, teksto sa Notes at sa Singluse
+Sabihan ang mga kalahok tungkol sa recording: kailangan ito ng batas sa ilang bansa. Sine-save ang mga tala sa folder na “%@”. Sa Mac na ito pinoproseso ang boses.
+Ngayon
+Mga Recording
+Wala pang recording.
+%@ · %lld linya
+Tapos
+Walang nakilalang pananalita.
+Kopyahin ang Teksto
+Buksan sa Notes
+Burahin sa Singluse…
+Burahin ang recording sa Singluse? Mananatili ang tala.
+Burahin ang modelong Singluse sa disk?
+Dina-download ang modelo: %lld%%
+Nilo-load ang modelo
+Handa na ang modelo
+Hindi naka-load sa memory ang modelo
+Kailangan ang modelo, %@
+Hindi lalabas ng Mac na ito ang boses mo. Batay sa open-source na Whisper at WhisperKit.
+Maaaring tumagal nang ilang minuto ang unang beses pagkatapos mag-download
+Isang beses lang ida-download. Hanggang doon, Apple engine ang gagamitin.
+Kilos
+Antala ng Paglabas
+Antala ng Pagtago
+Hitsura
+Laki ng Thumbnail
+Maliit
+Katamtaman
+Malaki
+Ipakita ang Pamagat ng Window
+⌥Tab Window Switcher
+Pindutin nang matagal ang ⌥ at pindutin ang Tab para makita ang thumbnail ng bawat window sa desktop na ito. Bitawan ang ⌥ para buksan ang napili. ⇧ pabalik, esc kanselahin.
+Kumopya ng anuman at lalabas ito rito.
+Buksan ang Panel
+Mga Setting
+Mga Key
+Ilang Item ang Itatago
+Burahin ang Mas Luma sa
+Isang Araw
+Isang Linggo
+Isang Buwan
+Burahin ang history? Mananatili ang mga naka-pin.
+Burahin
+Mga Pahina
+Antala ng Pagbukas
+Ipakita sa Lahat ng Screen
+Banayad na tugon ng trackpad kapag bumubukas
+Artwork at Posisyon ng Track
+Kailangan lang para sa mga button ng pag-play.
+Nakaimbak ang mga key sa Keychain ng Mac na ito at sa serbisyo lang ipinapadala. Hindi ibinibigay ng mga serbisyo ang limit ng subscription sa API, kaya dito mismo bumubukas ang pahina ng limit, at ang gastos sa API ay mula sa opisyal na ulat.
+Buksan
+Sa Browser
+Koneksyon at mga Limit
+Saan Kukuha ng Key
+Buksan ang Pahina
+Modelo
+Hindi iniuulat ng Google ang gastos ayon sa API key: makikita lang ito sa pahina ng paggamit.
+Burahin ang mga Key
+I-save
+Mag-sign in sa account mo kung hihilingin ng pahina.
+%@ Kung hindi bumukas ang sign-in, gamitin ang button na “Sa Browser”.
+Mga Live Wallpaper
+Makinis na Mouse
+Voice Input
+Mga Preview sa Dock
+Clipboard
+Smart Notch
+Gumagalaw na desktop
+Malambot mag-scroll ang gulong ng mouse, gaya ng trackpad
+Pindutin ang key, magsalita, at lalabas ang teksto sa cursor
+Thumbnail ng window kapag itinapat sa icon
+Lahat ng kinopya mo, laging nasa kamay
+Musika, file at clipboard, gaya ng Dynamic Island
+Kanang ⌥ Option
+Kanang ⌘ Command
+Kanang ⌃ Control
+fn (Globe)
+Pinakamakinis
+Balanse
+Mabilis
+Accessibility
+Screen Recording
+Pagkilala sa Pananalita
+Pag-scroll, shortcut, pagpasok ng teksto at kontrol ng window
+Thumbnail ng window para sa mga preview sa Dock
+Pakinggan ang boses habang pinipindot ang key
+Gawing teksto ang boses
+Ihinto ang Recording ng Pulong
+Simulan ang Recording ng Pulong
+Musika
+Estante ng File
+Gastos sa AI
+Sine-save ang teksto sa Notes at sa Singluse
+I-drag ang mga file dito
+Lalabas dito ang mga kinopya
+Ikonekta ang AI sa mga setting ng Singluse
+Hindi tinanggap ng engine ang format ng audio
+Hindi suportado ang wikang ito sa Mac mo
+Hindi ma-on ang mikropono
+Walang mikropono
+Walang text field, nasa clipboard ang teksto
+mga 630 MB
+Hindi pa handa ang modelo
+Mga Limit ng Subscription ng Claude
+Mga Limit ng ChatGPT at Codex
+Paggamit ng Gemini API
+Admin key (sk-ant-admin…) mula sa Claude Console
+Admin key mula sa setting ng organisasyon sa OpenAI
+Naabot ang limit ng request (429)
+Tinanggihan ng Claude ang pagproseso ng teksto
+Walang ganitong ulat ang Google ayon sa key
+Nakakonekta
+Teknolohiya
+Kalawakan
+Mga Lungsod
+Uso
+Kalikasan
+Neon Grid
+Daloy ng Datos
+Microchip
+Digital na Alon
+Hyperjump
+Planetang may Singsing
+Black Hole
+Nebula
+Neon na Lungsod
+Ilaw ng Lungsod sa Gabi
+Paglubog ng Araw sa Lungsod
+Synthwave
+Likidong Chrome
+Lava Lamp
+Prisma
+Malambot na Liwanag
+Likidong Seda
+Northern Lights
+Buhangin sa Dapit-hapon
+Karagatan sa Buwan
+Gubat sa Hamog
+Ako
+Iba pa
+Hindi nakita ang screen
+Kailangan ng handang modelong Singluse para sa recording ng pulong: piliin ito sa “Voice Input”.
+Kailangan ng pahintulot sa mikropono.
+Pulong
+Hindi nare-record ang ibang kalahok: kailangan ng pahintulot sa Screen Recording.
+Hindi ma-save sa Notes: tingnan ang pahintulot sa System Settings. Naka-save ang recording sa Singluse.
+Isara ang App
+Isara ang Window
+I-minimize ang Window
+Full Screen
+Maghanap sa History
+i-paste
+pumili
+mabilis
+isara
+Larawan
+Pangkalahatan
+Walang Pagpapakinis
+Sa mga app na ito, gaya ng laro, karaniwan ang gulong. Hindi kailanman apektado ang trackpad.
+Walang Preview
+Hindi lalabas ang mga card para sa mga app na ito.
+Huwag I-record
+Hindi papasok sa history ang kinopya mula sa mga app na ito. Hindi kailanman sine-save ang datos na minarkahang lihim ng password manager. Mananatili ang mga naka-pin kapag binura.
+Huling 7 Araw
+Huling 31 Araw
+Buksan ang Singluse
+History ng Clipboard
+Umalis
+Umalis sa Singluse
+I-edit
+Ulitin
+I-cut
+Kopyahin
+I-paste
+Piliin Lahat
+Window
+I-minimize
+Na-save ang key
+Hindi nakakonekta
+Gulong na may bingaw
+Makinis na gulong
+Nakaayos para sa gulong na may bingaw
+Nakaayos para sa makinis na gulong
+Bilis: %lld bingaw bawat segundo
+Tinanggihan ang key (%lld)
+Error ng serbisyo (%lld)
+Daigdig mula sa ISS
+Daigdig sa 4K, Expedition 65
+Solar Flare
+Isang Taon ng Araw
+Mars: Jezero Crater
+Great Red Spot ng Jupiter
+Saturn mula sa Cassini
+Simulan
+Ihinto
+Ipasok Agad ang Teksto
+Pindutin nang matagal ang key habang nagsasalita, o pindutin nang dalawang beses: kusang magre-record at hihinto sa susunod na pindot. Kung walang text field, mananatili ang teksto sa clipboard. Sa agarang pagpasok, lalabas agad ang draft at papalitan ng tumpak na teksto makalipas ang isang segundo.
+Pindutin ang wallpaper para ma-install agad. Mga video mula sa Mixkit, mga larawan mula sa Wikimedia Commons: na-download sa Mac na ito para sa personal na gamit.
+Nasa clipboard ang tumpak na teksto
+Tumutugtog
+Timer
+Tagasalin
+Mga Limitasyon ng AI
+Tapos na ang oras
+Itigil
+Ituloy
+I-pause
++1 min
+min
+Simulan
+Mag-type ng salita o parirala
+Offline, gamit ang mga modelo ng Apple. Kinokopya ng Enter ang salin.
+Hindi pa na-download ang modelo ng wika.
+Hindi nagsasalin ang Apple sa pagitan ng mga wikang ito.
+Hindi maisalin.
+Awtomatikong tukuyin
+Na-download
+Mga Wika ng Tagasalin
+Gumagana ang pagsasalin nang offline gamit ang mga modelo ng Apple. Isang beses lang dina-download ang bawat modelo; pamahalaan ang mga ito sa System Settings, Language & Region.
+5 oras
+Linggo
+Mag-sign in sa Claude at ChatGPT para makita ang mga limitasyon
+Buksan ang Settings
+Preset
+Tunog sa Pagtatapos
+Walang tunog
+Naka-store ang mga key sa Keychain ng Mac na ito at ipinapadala lang sa serbisyo. Mag-sign in nang isang beses sa pahina ng limitasyon at ipapakita ng notch ang mga limitasyon ng subscription. Galing sa opisyal na ulat ang gastos sa API.
+Buksan ang Link mula sa Email
+Walang link mula sa serbisyong ito sa clipboard. Kopyahin muli ang link mula sa email.
+May natanggap na sign-in link? Huwag itong buksan: i-right-click, piliin ang Copy Link, at gamitin ang button sa itaas.
+Ang nasa Control Center
+I-on ang Wallpaper
+I-off para ibalik ang wallpaper ng macOS sa bawat display at desktop. Hindi na ito gagalawin ng Singluse.
+Itaas
+Ibaba
+Nauuna ang mga naka-on na pahina, ayon sa pagkakasunod kapag nag-swipe sa notch. Ayusin ang pagkakasunod gamit ang mga arrow o sa pag-drag.

@@ -1,0 +1,377 @@
+AI Services
+Meetings
+Permission needed
+Restore Defaults
+Allow
+Remove
+Add App
+Modules
+App
+Open at Login
+Show in Menu Bar
+App Language
+Same as System
+Relaunch
+The language changes after relaunching
+Animation Speed
+Faster
+Normal
+Calmer
+Permissions
+Screen Recording takes effect after relaunching.
+Display
+All Displays
+Section
+Favorites
+My Videos
+Remove from List
+Tap the heart on any wallpaper and it will appear here.
+Find Online
+Add Video…
+Your Video
+MP4 or MOV, muted. The file stays where it is.
+Wallpapers
+Animation plays when you hover over a wallpaper. Downloadable videos are courtesy of NASA, which does not endorse Singluse.
+Playback
+Speed
+Smoothness
+30 fps, power saving
+60 fps
+120 fps
+Quality
+Power Saving
+Standard
+High
+Maximum (heavy load)
+Change Wallpaper
+Never
+Every 15 Minutes
+Every Hour
+Every Day
+Run on Battery
+Pause when charge is below %lld%%
+Pause when the desktop is covered
+Power
+Live wallpapers use the GPU and drain the battery. When the desktop isn't visible, they use nothing.
+Wallpaper Frame on Lock Screen
+Lock Screen
+macOS can't show live video there: such a window would cover the password field. So a still frame of this wallpaper is used instead. It replaces your desktop picture, and the original comes back when you turn this off. With the lid closed the built-in display is off, so nothing is shown there.
+Turn On
+Paused: running on battery is turned off
+Play Anyway
+Paused: charge is below %lld%%
+Paused: Low Power Mode is on
+Paused: the desktop is covered by windows
+Choose a video for your desktop
+%lld MB
+Source: NASA · %lld MB
+Close
+Download
+Retry
+Cancel
+Delete File
+Install
+Mouse
+Calibrate
+Not yet tuned for this mouse
+Connected Mouse
+Calibration measures how this mouse's wheel works and picks the smoothness. The settings turn on by themselves when it's connected.
+Feel
+Mode
+Custom
+Reverse Direction
+Fine Tuning
+Try It with the Wheel
+Line %lld
+Turn on the module and grant permission to begin.
+Not enough data. Spin the wheel for longer.
+Spin the wheel up and down the way you usually scroll a page.
+Cancel
+Once More
+Apply
+Key
+Short sound at start and end
+Controls
+Hold the key while you speak, or press it twice: recording runs by itself and the next press stops it. If there's no text field, the text stays on the clipboard.
+Recognition
+Language
+Second Language
+None
+Microphone
+Engine
+Singluse on this Mac
+Apple on this Mac
+OpenAI Cloud
+Add an OpenAI key under “AI Services”. The Mac is used until then.
+Download
+Language model isn't downloaded
+Downloaded from Apple once, then works offline
+AI Editing
+Off
+Tidy
+Business Style
+Custom Instructions
+Service
+Add this service's key under “AI Services”.
+For example: write shorter, without emotion
+Editing
+The Singluse model adds punctuation by itself. Editing is for removing repetition or changing the style: it sends text to the chosen service and uses your balance.
+My Dictionary
+Names and terms, separated by commas. Recognition will expect exactly this spelling.
+Try It Here
+Place the cursor in the field above and hold the key
+Listening…
+Processing…
+As Spoken
+Business
+Casual
+Style per App
+Without AI, casual style only removes the period at the end of a short message. AI Editing above truly changes the tone.
+Keep History
+Search
+Everything you dictate will appear here.
+Clear…
+History
+Stored only on this Mac.
+Delete all dictation history?
+Delete
+Not Inserted
+Copy
+Saving recording…
+Meeting Recording
+Microphone and computer audio, text in Notes and in Singluse
+Tell participants about the recording: some countries require it by law. Notes are saved to the “%@” folder. Voice is processed on this Mac.
+Now
+Recordings
+No recordings yet.
+%@ · %lld lines
+Done
+No speech recognized.
+Copy Text
+Open in Notes
+Delete from Singluse…
+Delete the recording from Singluse? The note will remain.
+Delete the Singluse model from disk?
+Downloading model: %lld%%
+Loading model
+Model ready
+Model isn't loaded into memory
+Model needed, %@
+Your voice never leaves this Mac. Based on open-source Whisper and WhisperKit.
+The first time after downloading may take a few minutes
+Downloaded once. Until then, the Apple engine is used.
+Behavior
+Show Delay
+Hide Delay
+Appearance
+Thumbnail Size
+Small
+Medium
+Large
+Show Window Titles
+⌥Tab Window Switcher
+Hold ⌥ and press Tab to see thumbnails of every window on this desktop. Release ⌥ to open the selected window. ⇧ goes back, esc cancels.
+Copy something and it will appear here.
+Open Panel
+Settings
+Keys
+Items to Keep
+Delete Older Than
+A Day
+A Week
+A Month
+Clear history? Pinned items will remain.
+Clear
+Pages
+Expand Delay
+Show on All Displays
+Light trackpad feedback when expanding
+Artwork and Track Position
+Only needed for the playback buttons.
+Keys are stored in this Mac's Keychain and sent only to the service itself. Services don't expose subscription limits through an API, so the limits page opens right here, and API spending comes from official reports.
+Open
+In Browser
+Connection and Limits
+Where to Get a Key
+Open Page
+Model
+Google doesn't report spending by API key: it's only visible on the usage page.
+Delete Keys
+Save
+Sign in to your account if the page asks.
+%@ If sign-in doesn't open, use the “In Browser” button.
+Live Wallpapers
+Smooth Mouse
+Voice Input
+Dock Previews
+Clipboard
+Smart Notch
+Animated desktop
+The mouse wheel scrolls softly, like a trackpad
+Hold the key, speak, and text appears at the cursor
+Window thumbnails when hovering over an icon
+Everything you copied, always at hand
+Music, files and clipboard, like Dynamic Island
+Right ⌥ Option
+Right ⌘ Command
+Right ⌃ Control
+fn (Globe)
+Smoothest
+Balanced
+Fast
+Accessibility
+Screen Recording
+Speech Recognition
+Scrolling, hotkeys, text insertion and window control
+Window thumbnails for Dock previews
+Hear your voice while the key is held
+Turn voice into text
+Stop Meeting Recording
+Start Meeting Recording
+Music
+File Shelf
+AI Spending
+Text is saved to Notes and to Singluse
+Drag files here
+Copied items appear here
+Connect AI in Singluse settings
+The engine didn't accept the audio format
+This language isn't supported on your Mac
+Couldn't turn on the microphone
+No microphone
+No text field, the text is on the clipboard
+about 630 MB
+The model isn't ready yet
+Claude Subscription Limits
+ChatGPT and Codex Limits
+Gemini API Usage
+Admin key (sk-ant-admin…) from Claude Console
+Admin key from your OpenAI organization settings
+Request limit reached (429)
+Claude declined to process the text
+Google doesn't offer this report by key
+Connected
+Technology
+Space
+Cities
+Trending
+Nature
+Neon Grid
+Data Stream
+Microchip
+Digital Wave
+Hyperjump
+Ringed Planet
+Black Hole
+Nebula
+Neon City
+Night City Lights
+Sunset over the City
+Synthwave
+Liquid Chrome
+Lava Lamp
+Prism
+Soft Light
+Liquid Silk
+Northern Lights
+Dunes at Sunset
+Moonlit Ocean
+Misty Forest
+Me
+Others
+Display not found
+Meeting recording needs the Singluse model to be ready: choose it under “Voice Input”.
+Microphone permission is needed.
+Meeting
+Other participants aren't being recorded: Screen Recording permission is needed.
+Couldn't save to Notes: check the permission in System Settings. The recording is saved in Singluse.
+Quit App
+Close Window
+Minimize Window
+Full Screen
+Search History
+paste
+select
+quick
+close
+Image
+General
+No Smoothing
+In these apps, such as games, the wheel works as usual. The trackpad is never affected.
+No Previews
+Cards won't show for these apps.
+Don't Record
+Whatever you copy from these apps stays out of history. Data that password managers mark as secret is never saved. Pinned items survive clearing.
+Last 7 Days
+Last 31 Days
+Open Singluse
+Clipboard History
+Quit
+Quit Singluse
+Edit
+Redo
+Cut
+Copy
+Paste
+Select All
+Window
+Minimize
+Key saved
+Not connected
+Notched wheel
+Smooth wheel
+Tuned for a notched wheel
+Tuned for a smooth wheel
+Pace: %lld notches per second
+Key rejected (%lld)
+Service error (%lld)
+Earth from the ISS
+Earth in 4K, Expedition 65
+Solar Flare
+A Year of the Sun
+Mars: Jezero Crater
+Jupiter's Great Red Spot
+Saturn through Cassini
+Start
+Stop
+Insert Text Instantly
+Hold the key while you speak, or press it twice: recording runs by itself and the next press stops it. If there's no text field, the text stays on the clipboard. With instant insertion a draft appears right away and is replaced by the accurate text a second later.
+Tap a wallpaper to install it right away. Videos from Mixkit, photos from Wikimedia Commons: downloaded to this Mac for personal use.
+Accurate text is on the clipboard
+Now Playing
+Timer
+Translator
+AI Limits
+Time’s up
+Stop
+Resume
+Pause
++1 min
+min
+Start
+Type a word or phrase
+Works offline with Apple’s models. Enter copies the translation.
+The language model isn’t downloaded yet.
+Apple doesn’t translate between these languages.
+Couldn’t translate.
+Detect automatically
+Downloaded
+Translator Languages
+Translation works offline with Apple’s models. Each model is downloaded once; manage them in System Settings under Language & Region.
+5 hours
+Week
+Sign in to Claude and ChatGPT to see limits
+Open Settings
+Preset
+Finish Sound
+None
+Keys are stored in this Mac’s Keychain and sent only to the service itself. Sign in on the limits page once and the notch will show your subscription limits. API spending comes from official reports.
+Open Link from Email
+The clipboard has no link from this service. Copy the link from the email again.
+Got a sign-in link? Don’t open it: right-click it, choose Copy Link, then use the button above.
+What’s in Control Center
+Enable Wallpapers
+Turn off to restore your macOS wallpaper on every display and desktop. Singluse won’t touch it again.
+Move Up
+Move Down
+Enabled pages are listed first, in the order you swipe through them in the notch. Reorder them with the arrows or by dragging.

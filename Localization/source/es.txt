@@ -1,0 +1,377 @@
+Servicios de IA
+Reuniones
+Se necesita permiso
+Restablecer valores
+Permitir
+Quitar
+Añadir app
+Módulos
+App
+Abrir al iniciar sesión
+Mostrar en la barra de menús
+Idioma de la app
+Igual que el sistema
+Reiniciar
+El idioma cambia al reiniciar
+Velocidad de animación
+Más rápida
+Normal
+Más tranquila
+Permisos
+La grabación de pantalla se aplica al reiniciar.
+Pantalla
+Todas las pantallas
+Sección
+Favoritos
+Mis videos
+Quitar de la lista
+Toca el corazón de un fondo y aparecerá aquí.
+Buscar en internet
+Añadir video…
+Tu video
+MP4 o MOV, sin sonido. El archivo se queda donde está.
+Fondos
+La animación se reproduce al pasar el cursor. Los videos descargables son cortesía de la NASA, que no respalda Singluse.
+Reproducción
+Velocidad
+Fluidez
+30 fps, ahorro de energía
+60 fps
+120 fps
+Calidad
+Ahorro
+Estándar
+Alta
+Máxima (carga alta)
+Cambiar fondo
+Nunca
+Cada 15 minutos
+Cada hora
+Cada día
+Funcionar con batería
+Pausar con carga inferior al %lld%%
+Pausar si el escritorio está cubierto
+Energía
+Los fondos animados usan la GPU y gastan batería. Si el escritorio no se ve, no consumen nada.
+Fotograma en la pantalla de bloqueo
+Pantalla de bloqueo
+macOS no permite mostrar video ahí: esa ventana taparía el campo de contraseña. Por eso se usa un fotograma fijo de este fondo. Sustituye la imagen del escritorio, y la original vuelve al desactivarlo. Con la tapa cerrada la pantalla integrada está apagada, así que no se muestra nada.
+Activar
+En pausa: el uso con batería está desactivado
+Reproducir igualmente
+En pausa: carga inferior al %lld%%
+En pausa: modo de bajo consumo activado
+En pausa: el escritorio está cubierto por ventanas
+Elige un video para tu escritorio
+%lld MB
+Fuente: NASA · %lld MB
+Cerrar
+Descargar
+Reintentar
+Cancelar
+Eliminar archivo
+Instalar
+Ratón
+Calibrar
+Aún no ajustado para este ratón
+Ratón conectado
+La calibración mide cómo funciona la rueda de este ratón y elige la fluidez. Los ajustes se activan solos al conectarlo.
+Sensación
+Modo
+Personalizado
+Dirección inversa
+Ajuste fino
+Prueba con la rueda
+Línea %lld
+Activa el módulo y concede el permiso para empezar.
+Faltan datos. Gira la rueda durante más tiempo.
+Gira la rueda arriba y abajo como cuando lees una página.
+Cancelar
+Otra vez
+Aplicar
+Tecla
+Sonido breve al empezar y terminar
+Controles
+Mantén la tecla mientras hablas o púlsala dos veces: se graba sola y otra pulsación la detiene. Si no hay campo de texto, el texto queda en el portapapeles.
+Reconocimiento
+Idioma
+Segundo idioma
+Ninguno
+Micrófono
+Motor
+Singluse en este Mac
+Apple en este Mac
+Nube de OpenAI
+Añade una clave de OpenAI en «Servicios de IA». Hasta entonces se usa el Mac.
+Descargar
+El modelo de idioma no está descargado
+Se descarga de Apple una vez y luego funciona sin conexión
+Edición con IA
+Desactivada
+Pulcra
+Estilo formal
+Instrucciones propias
+Servicio
+Añade la clave de este servicio en «Servicios de IA».
+Por ejemplo: escribe más corto y sin emoción
+Edición
+El modelo Singluse pone la puntuación solo. La edición sirve para quitar repeticiones o cambiar el estilo: envía el texto al servicio elegido y usa tu saldo.
+Mi diccionario
+Nombres y términos separados por comas. El reconocimiento esperará esta escritura.
+Pruébalo aquí
+Pon el cursor en el campo de arriba y mantén la tecla
+Escuchando…
+Procesando…
+Tal como se dijo
+Formal
+Informal
+Estilo por app
+Sin IA, el estilo informal solo quita el punto final de un mensaje corto. La edición con IA sí cambia el tono.
+Guardar historial
+Buscar
+Aquí aparecerá todo lo que dictes.
+Borrar…
+Historial
+Se guarda solo en este Mac.
+¿Eliminar todo el historial de dictado?
+Eliminar
+No insertado
+Copiar
+Guardando la grabación…
+Grabación de reunión
+Micrófono y audio del ordenador, texto en Notas y en Singluse
+Avisa a los participantes de la grabación: en algunos países es obligatorio por ley. Las notas se guardan en la carpeta «%@». La voz se procesa en este Mac.
+Ahora
+Grabaciones
+Aún no hay grabaciones.
+%@ · %lld líneas
+Listo
+No se reconoció voz.
+Copiar texto
+Abrir en Notas
+Eliminar de Singluse…
+¿Eliminar la grabación de Singluse? La nota se conservará.
+¿Eliminar el modelo Singluse del disco?
+Descargando modelo: %lld%%
+Cargando modelo
+Modelo listo
+El modelo no está cargado en memoria
+Se necesita el modelo, %@
+Tu voz no sale de este Mac. Basado en los proyectos abiertos Whisper y WhisperKit.
+La primera vez tras descargarlo puede tardar unos minutos
+Se descarga una vez. Hasta entonces se usa el motor de Apple.
+Comportamiento
+Retardo al mostrar
+Retardo al ocultar
+Aspecto
+Tamaño de miniaturas
+Pequeñas
+Medianas
+Grandes
+Mostrar títulos de ventana
+Selector de ventanas ⌥Tab
+Mantén ⌥ y pulsa Tab para ver miniaturas de todas las ventanas de este escritorio. Suelta ⌥ para abrir la elegida. ⇧ retrocede, esc cancela.
+Copia algo y aparecerá aquí.
+Abrir panel
+Ajustes
+Teclas
+Elementos a conservar
+Borrar anteriores a
+Un día
+Una semana
+Un mes
+¿Borrar el historial? Los elementos fijados se conservarán.
+Borrar
+Páginas
+Retardo al expandir
+Mostrar en todas las pantallas
+Respuesta suave del trackpad al expandir
+Portada y posición de la pista
+Solo se necesita para los botones de reproducción.
+Las claves se guardan en el llavero de este Mac y solo se envían al propio servicio. Los servicios no ofrecen los límites de suscripción por API, así que la página de límites se abre aquí, y el gasto de API viene de informes oficiales.
+Abrir
+En el navegador
+Conexión y límites
+Dónde obtener la clave
+Abrir página
+Modelo
+Google no informa del gasto por clave de API: solo se ve en la página de uso.
+Eliminar claves
+Guardar
+Inicia sesión si la página lo pide.
+%@ Si no se abre el inicio de sesión, usa el botón «En el navegador».
+Fondos animados
+Ratón fluido
+Entrada de voz
+Vistas previas del Dock
+Portapapeles
+Muesca inteligente
+Escritorio animado
+La rueda del ratón se desplaza suave, como un trackpad
+Mantén la tecla, habla y el texto aparece en el cursor
+Miniaturas de ventanas al pasar sobre un icono
+Todo lo copiado, siempre a mano
+Música, archivos y portapapeles, como la Dynamic Island
+⌥ Option derecha
+⌘ Command derecha
+⌃ Control derecha
+fn (Globo)
+Lo más fluido
+Equilibrado
+Rápido
+Accesibilidad
+Grabación de pantalla
+Reconocimiento de voz
+Desplazamiento, atajos, inserción de texto y control de ventanas
+Miniaturas de ventanas para las vistas previas del Dock
+Oír tu voz mientras mantienes la tecla
+Convertir voz en texto
+Detener grabación de reunión
+Iniciar grabación de reunión
+Música
+Estante de archivos
+Gasto en IA
+El texto se guarda en Notas y en Singluse
+Arrastra archivos aquí
+Lo copiado aparecerá aquí
+Conecta la IA en los ajustes de Singluse
+El motor no aceptó el formato de audio
+Este idioma no es compatible con tu Mac
+No se pudo activar el micrófono
+No hay micrófono
+No hay campo de texto, el texto está en el portapapeles
+unos 630 MB
+El modelo aún no está listo
+Límites de suscripción de Claude
+Límites de ChatGPT y Codex
+Uso de la API de Gemini
+Clave de administrador (sk-ant-admin…) de Claude Console
+Clave de administrador de los ajustes de tu organización de OpenAI
+Límite de solicitudes alcanzado (429)
+Claude rechazó procesar el texto
+Google no ofrece este informe por clave
+Conectado
+Tecnología
+Espacio
+Ciudades
+Tendencia
+Naturaleza
+Rejilla de neón
+Flujo de datos
+Microchip
+Onda digital
+Hipersalto
+Planeta con anillos
+Agujero negro
+Nebulosa
+Ciudad de neón
+Luces de la ciudad
+Atardecer sobre la ciudad
+Synthwave
+Cromo líquido
+Lámpara de lava
+Prisma
+Luz suave
+Seda líquida
+Aurora boreal
+Dunas al atardecer
+Océano bajo la luna
+Bosque con niebla
+Yo
+Otros
+Pantalla no encontrada
+La grabación de reuniones necesita el modelo Singluse listo: elígelo en «Entrada de voz».
+Se necesita permiso para el micrófono.
+Reunión
+No se graba a los demás participantes: se necesita el permiso de grabación de pantalla.
+No se pudo guardar en Notas: revisa el permiso en Ajustes del Sistema. La grabación está guardada en Singluse.
+Salir de la app
+Cerrar ventana
+Minimizar ventana
+Pantalla completa
+Buscar en el historial
+pegar
+elegir
+rápido
+cerrar
+Imagen
+General
+Sin suavizado
+En estas apps, como los juegos, la rueda funciona como siempre. El trackpad nunca se ve afectado.
+Sin vistas previas
+No se mostrarán tarjetas para estas apps.
+No registrar
+Lo que copies desde estas apps no entra en el historial. Los datos que los gestores de contraseñas marcan como secretos nunca se guardan. Lo fijado permanece al borrar.
+Últimos 7 días
+Últimos 31 días
+Abrir Singluse
+Historial del portapapeles
+Salir
+Salir de Singluse
+Edición
+Rehacer
+Cortar
+Copiar
+Pegar
+Seleccionar todo
+Ventana
+Minimizar
+Clave guardada
+Sin conectar
+Rueda con muescas
+Rueda suave
+Ajustado para rueda con muescas
+Ajustado para rueda suave
+Ritmo: %lld muescas por segundo
+Clave rechazada (%lld)
+Error del servicio (%lld)
+La Tierra desde la EEI
+La Tierra en 4K, Expedición 65
+Llamarada solar
+Un año del Sol
+Marte: cráter Jezero
+La Gran Mancha Roja de Júpiter
+Saturno visto por Cassini
+Iniciar
+Detener
+Insertar texto al instante
+Mantén la tecla mientras hablas o púlsala dos veces: se graba sola y otra pulsación la detiene. Si no hay campo de texto, el texto queda en el portapapeles. Con la inserción instantánea aparece un borrador enseguida y un segundo después se sustituye por el texto exacto.
+Toca un fondo para instalarlo al momento. Videos de Mixkit, fotos de Wikimedia Commons: descargados en este Mac para uso personal.
+El texto exacto está en el portapapeles
+Reproduciendo
+Temporizador
+Traductor
+Límites de IA
+Se acabó el tiempo
+Detener
+Reanudar
+Pausa
++1 min
+min
+Iniciar
+Escribe una palabra o frase
+Sin internet, con modelos de Apple. Intro copia la traducción.
+El modelo de idioma aún no se ha descargado.
+Apple no traduce entre estos idiomas.
+No se pudo traducir.
+Detectar automáticamente
+Descargado
+Idiomas del traductor
+La traducción funciona sin internet con modelos de Apple. Cada modelo se descarga una vez; adminístralos en Ajustes del Sistema, en Idioma y región.
+5 horas
+Semana
+Inicia sesión en Claude y ChatGPT para ver los límites
+Abrir ajustes
+Tiempo predefinido
+Sonido al terminar
+Sin sonido
+Las claves se guardan en el llavero de este Mac y solo se envían al propio servicio. Inicia sesión una vez en la página de límites y la muesca mostrará los límites de tu suscripción. El gasto de API procede de informes oficiales.
+Abrir enlace del correo
+El portapapeles no contiene un enlace de este servicio. Copia de nuevo el enlace del correo.
+¿Recibiste un enlace de inicio de sesión? No lo abras: haz clic derecho, elige Copiar enlace y usa el botón de arriba.
+Lo que aparece en el Centro de control
+Activar fondos
+Desactívalo para restaurar el fondo de macOS en todas las pantallas y escritorios. Singluse no volverá a tocarlo.
+Subir
+Bajar
+Las páginas activadas aparecen primero, en el orden en que se deslizan en la muesca. Cambia el orden con las flechas o arrastrando.

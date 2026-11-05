@@ -1,0 +1,377 @@
+Dịch vụ AI
+Cuộc họp
+Cần quyền
+Khôi phục mặc định
+Cho phép
+Gỡ
+Thêm ứng dụng
+Mô-đun
+Ứng dụng
+Mở khi đăng nhập
+Hiện trên thanh menu
+Ngôn ngữ ứng dụng
+Theo hệ thống
+Khởi động lại
+Ngôn ngữ đổi sau khi khởi động lại
+Tốc độ hiệu ứng
+Nhanh hơn
+Bình thường
+Nhẹ nhàng hơn
+Quyền
+Ghi màn hình có hiệu lực sau khi khởi động lại.
+Màn hình
+Tất cả màn hình
+Mục
+Yêu thích
+Video của tôi
+Gỡ khỏi danh sách
+Nhấn trái tim trên hình nền để nó xuất hiện ở đây.
+Tìm trên mạng
+Thêm video…
+Video của bạn
+MP4 hoặc MOV, không tiếng. Tệp vẫn ở nguyên chỗ.
+Hình nền
+Hiệu ứng chạy khi rê chuột. Video tải về do NASA cung cấp, NASA không bảo trợ Singluse.
+Phát
+Tốc độ
+Độ mượt
+30 khung hình, tiết kiệm pin
+60 khung hình
+120 khung hình
+Chất lượng
+Tiết kiệm
+Tiêu chuẩn
+Cao
+Tối đa (tải nặng)
+Đổi hình nền
+Không bao giờ
+Mỗi 15 phút
+Mỗi giờ
+Mỗi ngày
+Chạy khi dùng pin
+Tạm dừng khi pin dưới %lld%%
+Tạm dừng khi màn hình nền bị che
+Nguồn điện
+Hình nền động dùng GPU và tốn pin. Khi không thấy màn hình nền, chúng không tốn gì.
+Khung hình trên màn hình khóa
+Màn hình khóa
+macOS không cho hiện video động ở đó: cửa sổ như vậy sẽ che ô mật khẩu. Vì vậy sẽ dùng một khung hình tĩnh của hình nền này. Nó thay ảnh màn hình nền, ảnh gốc sẽ trở lại khi tắt. Khi gập máy, màn hình tích hợp tắt nên không hiện gì.
+Bật
+Tạm dừng: đã tắt chạy khi dùng pin
+Vẫn phát
+Tạm dừng: pin dưới %lld%%
+Tạm dừng: đang bật chế độ nguồn điện thấp
+Tạm dừng: màn hình nền bị cửa sổ che
+Chọn video cho màn hình nền
+%lld MB
+Nguồn: NASA · %lld MB
+Đóng
+Tải về
+Thử lại
+Hủy
+Xóa tệp
+Cài đặt
+Chuột
+Hiệu chỉnh
+Chưa chỉnh cho chuột này
+Chuột đã kết nối
+Hiệu chỉnh đo cách con lăn của chuột này hoạt động và chọn độ mượt. Thiết lập tự bật khi kết nối.
+Cảm giác
+Chế độ
+Tùy chỉnh
+Đảo chiều
+Tinh chỉnh
+Thử bằng con lăn
+Dòng %lld
+Bật mô-đun và cấp quyền để bắt đầu.
+Không đủ dữ liệu. Hãy lăn lâu hơn.
+Lăn lên xuống như khi bạn đọc một trang.
+Hủy
+Lần nữa
+Áp dụng
+Phím
+Âm ngắn khi bắt đầu và kết thúc
+Điều khiển
+Giữ phím khi nói, hoặc nhấn hai lần: tự ghi và lần nhấn tiếp theo sẽ dừng. Nếu không có ô nhập, văn bản ở lại bảng tạm.
+Nhận dạng
+Ngôn ngữ
+Ngôn ngữ thứ hai
+Không
+Micrô
+Bộ xử lý
+Singluse trên Mac này
+Apple trên Mac này
+Đám mây OpenAI
+Thêm khóa OpenAI trong “Dịch vụ AI”. Trước đó sẽ dùng Mac.
+Tải về
+Chưa tải mô hình ngôn ngữ
+Tải từ Apple một lần, sau đó dùng không cần mạng
+Biên tập bằng AI
+Tắt
+Gọn gàng
+Phong cách công việc
+Hướng dẫn riêng
+Dịch vụ
+Thêm khóa của dịch vụ này trong “Dịch vụ AI”.
+Ví dụ: viết ngắn hơn, không cảm xúc
+Biên tập
+Mô hình Singluse tự thêm dấu câu. Biên tập dùng để bỏ lặp hoặc đổi phong cách: nó gửi văn bản tới dịch vụ đã chọn và dùng số dư của bạn.
+Từ điển của tôi
+Tên và thuật ngữ, cách nhau bằng dấu phẩy. Nhận dạng sẽ ưu tiên đúng cách viết này.
+Thử ở đây
+Đặt con trỏ vào ô bên trên và giữ phím
+Đang nghe…
+Đang xử lý…
+Như đã nói
+Công việc
+Thân mật
+Phong cách theo ứng dụng
+Không có AI, kiểu thân mật chỉ bỏ dấu chấm cuối tin nhắn ngắn. Biên tập bằng AI mới thực sự đổi giọng văn.
+Lưu lịch sử
+Tìm kiếm
+Mọi thứ bạn đọc sẽ xuất hiện ở đây.
+Xóa…
+Lịch sử
+Chỉ lưu trên Mac này.
+Xóa toàn bộ lịch sử đọc?
+Xóa
+Chưa chèn
+Sao chép
+Đang lưu bản ghi…
+Ghi cuộc họp
+Micrô và âm thanh máy tính, văn bản trong Ghi chú và Singluse
+Hãy báo cho người tham gia biết về việc ghi: một số nước bắt buộc theo luật. Ghi chú lưu vào thư mục “%@”. Giọng nói được xử lý trên Mac này.
+Hiện tại
+Bản ghi
+Chưa có bản ghi.
+%@ · %lld câu
+Xong
+Không nhận dạng được lời nói.
+Sao chép văn bản
+Mở trong Ghi chú
+Xóa khỏi Singluse…
+Xóa bản ghi khỏi Singluse? Ghi chú vẫn còn.
+Xóa mô hình Singluse khỏi ổ đĩa?
+Đang tải mô hình: %lld%%
+Đang nạp mô hình
+Mô hình đã sẵn sàng
+Mô hình chưa nạp vào bộ nhớ
+Cần mô hình, %@
+Giọng nói không rời khỏi Mac này. Dựa trên Whisper và WhisperKit mã nguồn mở.
+Lần đầu sau khi tải có thể mất vài phút
+Chỉ tải một lần. Trước đó sẽ dùng bộ xử lý của Apple.
+Hành vi
+Độ trễ hiện
+Độ trễ ẩn
+Giao diện
+Cỡ hình thu nhỏ
+Nhỏ
+Vừa
+Lớn
+Hiện tiêu đề cửa sổ
+Trình chuyển cửa sổ ⌥Tab
+Giữ ⌥ và nhấn Tab để xem hình thu nhỏ mọi cửa sổ trên màn hình nền này. Thả ⌥ để mở cửa sổ đã chọn. ⇧ quay lại, esc hủy.
+Sao chép gì đó và nó sẽ xuất hiện ở đây.
+Mở bảng
+Cài đặt
+Phím
+Số mục giữ lại
+Xóa cũ hơn
+Một ngày
+Một tuần
+Một tháng
+Xóa lịch sử? Các mục đã ghim vẫn còn.
+Xóa
+Trang
+Độ trễ mở rộng
+Hiện trên mọi màn hình
+Phản hồi nhẹ của bàn di khi mở rộng
+Ảnh bìa và vị trí bài hát
+Chỉ cần cho các nút phát.
+Khóa được lưu trong Chuỗi khóa của Mac này và chỉ gửi tới chính dịch vụ. Các dịch vụ không cung cấp giới hạn gói qua API, nên trang giới hạn mở ngay tại đây, còn chi phí API lấy từ báo cáo chính thức.
+Mở
+Trong trình duyệt
+Kết nối và giới hạn
+Lấy khóa ở đâu
+Mở trang
+Mô hình
+Google không báo chi phí theo khóa API: chỉ xem được trên trang sử dụng.
+Xóa khóa
+Lưu
+Đăng nhập tài khoản nếu trang yêu cầu.
+%@ Nếu không mở được đăng nhập, hãy dùng nút “Trong trình duyệt”.
+Hình nền động
+Chuột mượt
+Nhập bằng giọng nói
+Xem trước Dock
+Bảng tạm
+Tai thỏ thông minh
+Màn hình nền động
+Con lăn chuột cuộn êm như bàn di
+Giữ phím, nói, và văn bản xuất hiện ở con trỏ
+Hình thu nhỏ cửa sổ khi rê trên biểu tượng
+Mọi thứ đã sao chép luôn trong tầm tay
+Nhạc, tệp và bảng tạm, như Dynamic Island
+⌥ Option phải
+⌘ Command phải
+⌃ Control phải
+fn (Quả địa cầu)
+Mượt nhất
+Cân bằng
+Nhanh
+Trợ năng
+Ghi màn hình
+Nhận dạng giọng nói
+Cuộn, phím tắt, chèn văn bản và điều khiển cửa sổ
+Hình thu nhỏ cửa sổ cho xem trước Dock
+Nghe giọng bạn khi giữ phím
+Chuyển giọng nói thành văn bản
+Dừng ghi cuộc họp
+Bắt đầu ghi cuộc họp
+Nhạc
+Kệ tệp
+Chi phí AI
+Văn bản được lưu vào Ghi chú và Singluse
+Kéo tệp vào đây
+Nội dung đã sao chép sẽ xuất hiện ở đây
+Kết nối AI trong cài đặt Singluse
+Bộ xử lý không nhận định dạng âm thanh
+Mac của bạn không hỗ trợ ngôn ngữ này
+Không bật được micrô
+Không có micrô
+Không có ô nhập, văn bản đã ở bảng tạm
+khoảng 630 MB
+Mô hình chưa sẵn sàng
+Giới hạn gói Claude
+Giới hạn ChatGPT và Codex
+Mức dùng Gemini API
+Khóa quản trị (sk-ant-admin…) từ Claude Console
+Khóa quản trị từ cài đặt tổ chức OpenAI
+Đã đạt giới hạn yêu cầu (429)
+Claude từ chối xử lý văn bản
+Google không có báo cáo này theo khóa
+Đã kết nối
+Công nghệ
+Vũ trụ
+Thành phố
+Thịnh hành
+Thiên nhiên
+Lưới neon
+Dòng dữ liệu
+Vi mạch
+Sóng số
+Bước nhảy siêu tốc
+Hành tinh có vành
+Hố đen
+Tinh vân
+Thành phố neon
+Ánh đèn đêm
+Hoàng hôn trên phố
+Synthwave
+Chrome lỏng
+Đèn dung nham
+Lăng kính
+Ánh sáng dịu
+Lụa lỏng
+Cực quang
+Đồi cát lúc hoàng hôn
+Đại dương dưới trăng
+Rừng trong sương
+Tôi
+Người khác
+Không tìm thấy màn hình
+Ghi cuộc họp cần mô hình Singluse sẵn sàng: hãy chọn trong “Nhập bằng giọng nói”.
+Cần quyền micrô.
+Cuộc họp
+Không ghi được người khác: cần quyền ghi màn hình.
+Không lưu được vào Ghi chú: hãy kiểm tra quyền trong Cài đặt hệ thống. Bản ghi đã lưu trong Singluse.
+Thoát ứng dụng
+Đóng cửa sổ
+Thu nhỏ cửa sổ
+Toàn màn hình
+Tìm trong lịch sử
+dán
+chọn
+nhanh
+đóng
+Hình ảnh
+Chung
+Không làm mượt
+Trong các ứng dụng này, như trò chơi, con lăn hoạt động bình thường. Bàn di không bị ảnh hưởng.
+Không xem trước
+Thẻ sẽ không hiện cho các ứng dụng này.
+Không ghi lại
+Nội dung sao chép từ các ứng dụng này không vào lịch sử. Dữ liệu mà trình quản lý mật khẩu đánh dấu bí mật không bao giờ được lưu. Mục đã ghim vẫn còn khi xóa.
+7 ngày qua
+31 ngày qua
+Mở Singluse
+Lịch sử bảng tạm
+Thoát
+Thoát Singluse
+Sửa
+Làm lại
+Cắt
+Sao chép
+Dán
+Chọn tất cả
+Cửa sổ
+Thu nhỏ
+Đã lưu khóa
+Chưa kết nối
+Con lăn có nấc
+Con lăn trơn
+Đã chỉnh cho con lăn có nấc
+Đã chỉnh cho con lăn trơn
+Nhịp: %lld nấc mỗi giây
+Khóa bị từ chối (%lld)
+Lỗi dịch vụ (%lld)
+Trái Đất từ ISS
+Trái Đất 4K, Chuyến thám hiểm 65
+Bão Mặt Trời
+Một năm của Mặt Trời
+Sao Hỏa: hố Jezero
+Vết Đỏ Lớn của Sao Mộc
+Sao Thổ qua Cassini
+Bắt đầu
+Dừng
+Chèn văn bản ngay
+Giữ phím khi nói, hoặc nhấn hai lần: tự ghi và lần nhấn tiếp theo sẽ dừng. Nếu không có ô nhập, văn bản ở lại bảng tạm. Khi chèn ngay, bản nháp xuất hiện lập tức và được thay bằng văn bản chính xác sau một giây.
+Nhấn vào hình nền để cài ngay. Video từ Mixkit, ảnh từ Wikimedia Commons: đã tải về Mac này để dùng cá nhân.
+Văn bản chính xác ở bảng tạm
+Đang phát
+Hẹn giờ
+Dịch thuật
+Giới hạn AI
+Hết giờ
+Dừng
+Tiếp tục
+Tạm dừng
++1 phút
+phút
+Bắt đầu
+Nhập từ hoặc cụm từ
+Không cần mạng, dùng mô hình của Apple. Enter để sao chép bản dịch.
+Chưa tải mô hình ngôn ngữ.
+Apple không dịch giữa các ngôn ngữ này.
+Không thể dịch.
+Tự động phát hiện
+Đã tải
+Ngôn ngữ dịch
+Dịch hoạt động không cần mạng bằng mô hình của Apple. Mỗi mô hình chỉ tải một lần; quản lý trong Cài đặt hệ thống, mục Ngôn ngữ & Vùng.
+5 giờ
+Tuần
+Đăng nhập Claude và ChatGPT để xem giới hạn
+Mở cài đặt
+Thời gian đặt sẵn
+Âm báo kết thúc
+Không có âm
+Khóa được lưu trong Chuỗi khóa của máy Mac này và chỉ gửi đến chính dịch vụ. Đăng nhập một lần ở trang giới hạn, tai thỏ sẽ hiển thị giới hạn gói. Chi phí API lấy từ báo cáo chính thức.
+Mở liên kết từ email
+Bộ nhớ tạm không có liên kết của dịch vụ này. Hãy sao chép lại liên kết trong email.
+Đã nhận liên kết đăng nhập? Đừng mở: nhấp chuột phải, chọn Sao chép liên kết, rồi dùng nút ở trên.
+Nội dung trong Trung tâm điều khiển
+Bật hình nền
+Tắt để khôi phục hình nền macOS trên mọi màn hình và bàn làm việc. Singluse sẽ không thay đổi nó nữa.
+Lên trên
+Xuống dưới
+Các trang đã bật nằm ở trên, theo thứ tự lướt trong tai thỏ. Đổi thứ tự bằng mũi tên hoặc kéo thả.
