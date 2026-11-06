@@ -532,6 +532,10 @@ final class NotchInstance: ObservableObject {
         clickMonitor = nil
         cancellables.removeAll()
         panel.orderOut(nil)
+        // Окно держит своё содержимое, а содержимое держит этот экземпляр. Без разрыва этой связи
+        // старая чёлка оставалась в памяти и продолжала перерисовываться вместе с новой.
+        panel.contentView = nil
+        panel.close()
     }
 
     var visiblePages: [NotchPage] {
@@ -708,7 +712,7 @@ final class NotchController {
                     MainActor.assumeIsolated { self?.tick() }
                 }
                 screenObserver = NotificationCenter.default.addObserver(forName: NSApplication.didChangeScreenParametersNotification, object: nil, queue: .main) { [weak self] _ in
-                    MainActor.assumeIsolated { self?.rebuild() }
+                    MainActor.assumeIsolated { self?.rebuildIfScreensChanged() }
                 }
             } else {
                 Coordinator.shared.nowPlaying.stopMonitoring()
@@ -726,7 +730,21 @@ final class NotchController {
         }
     }
 
+    /// Экраны, для которых построены чёлки. Система сообщает об «изменении экранов» гораздо чаще,
+    /// чем они на самом деле меняются, и пересоздавать чёлку каждый раз незачем.
+    private var builtScreens = ""
+
+    private static var screenSignature: String {
+        NSScreen.screens.map { "\($0.stableID) \($0.frame) \($0.safeAreaInsets.top)" }.joined(separator: "|")
+    }
+
+    private func rebuildIfScreensChanged() {
+        guard Self.screenSignature != builtScreens else { return }
+        rebuild()
+    }
+
     private func rebuild() {
+        builtScreens = Self.screenSignature
         instances.forEach { $0.close() }
         builtForAllDisplays = settings.notchAllDisplays
         let notched = NSScreen.screens.filter { $0.safeAreaInsets.top > 0 }

@@ -48,7 +48,11 @@ final class WallpaperController: ObservableObject {
     init() {
         let center = NotificationCenter.default
         observers.append(center.addObserver(forName: NSApplication.didChangeScreenParametersNotification, object: nil, queue: .main) { [weak self] _ in
-            MainActor.assumeIsolated { self?.rebuild(animated: false) }
+            MainActor.assumeIsolated {
+                // Система присылает это уведомление и без настоящих изменений; обои пересоздаются, только если экраны другие.
+                guard let self, self.screensKey != Self.currentScreens else { return }
+                self.rebuild(animated: false)
+            }
         })
         // После сна окна и плеер надо подтолкнуть, иначе обои могут остаться на старом кадре.
         observers.append(NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didWakeNotification, object: nil, queue: .main) { [weak self] _ in
@@ -115,8 +119,15 @@ final class WallpaperController: ObservableObject {
         return queue
     }
 
+    private var screensKey = ""
+
+    private static var currentScreens: String {
+        NSScreen.screens.map { "\($0.stableID) \($0.frame)" }.joined(separator: "|")
+    }
+
     private func rebuild(animated: Bool) {
         guard isActive else { return }
+        screensKey = Self.currentScreens
         let oldWindows = windows
         let oldPlayers = players
         windows = []
@@ -168,7 +179,7 @@ final class WallpaperController: ObservableObject {
             incoming.forEach { $0.animator().alphaValue = 1 }
         }, completionHandler: {
             oldPlayers.values.forEach { $0.pause() }
-            oldWindows.forEach { $0.orderOut(nil) }
+            oldWindows.forEach(Self.discard)
             // Прозрачность нужна только на время смены: непрозрачное окно система компонует гораздо дешевле.
             incoming.forEach {
                 $0.backgroundColor = .black
@@ -177,12 +188,19 @@ final class WallpaperController: ObservableObject {
         })
     }
 
+    /// Убранное окно не должно рисовать дальше: шейдер останавливается, а содержимое отпускается.
+    private static func discard(_ window: WallpaperWindow) {
+        (window.contentView as? ShaderView)?.isPaused = true
+        window.orderOut(nil)
+        window.contentView = nil
+    }
+
     private func fadeOut(_ list: [WallpaperWindow], completion: @escaping () -> Void) {
         NSAnimationContext.runAnimationGroup({ context in
             context.duration = 0.5
             list.forEach { $0.animator().alphaValue = 0 }
         }, completionHandler: {
-            list.forEach { $0.orderOut(nil) }
+            list.forEach(Self.discard)
             completion()
         })
     }
