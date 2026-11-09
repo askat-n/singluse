@@ -524,7 +524,7 @@ final class DictationController: ObservableObject {
                 let pending = session.floatSamples(from: utterance.confirmedSamples)
                 // Режем только длинную речь: целая фраза распознаётся заметно точнее, чем склеенная из кусков.
                 if let cut = SpeechChunker.cutPoint(in: pending, minimumSeconds: 15, maximumSeconds: 24) {
-                    await utterance.speculation?.task.value
+                    _ = await utterance.speculation?.task.value
                     utterance.speculation = nil
                     let heard = !session.heardText.isEmpty
                     // Кусок считается распознанным, только если модель действительно вернула результат:
@@ -539,7 +539,7 @@ final class DictationController: ObservableObject {
                 // Человек замолчал: начинаем считать сразу, не дожидаясь отпускания клавиши.
                 if utterance.speculation?.samples != pending.count, SpeechChunker.endsWithPause(pending) {
                     if let current = utterance.speculation, !SpeechChunker.hasSpeech(in: pending[min(current.samples, pending.count)...], comparedTo: pending) { continue }
-                    await utterance.speculation?.task.value
+                    _ = await utterance.speculation?.task.value
                     guard self.token == currentToken, self.phase == .listening else { return }
                     let context = utterance.confirmedText
                     let heard = !session.heardText.isEmpty

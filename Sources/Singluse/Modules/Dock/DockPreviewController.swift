@@ -62,10 +62,10 @@ final class DockPreviewController {
         if active {
             attachToDock()
             // Dock перезапускается после смены настроек; наблюдателя надо ставить заново.
-            dockLaunchObserver = NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didLaunchApplicationNotification, object: nil, queue: .main) { note in
+            dockLaunchObserver = NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didLaunchApplicationNotification, object: nil, queue: .main) { [weak self] note in
                 let app = note.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication
                 guard app?.bundleIdentifier == "com.apple.dock" else { return }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     MainActor.assumeIsolated { self?.attachToDock() }
                 }
             }

@@ -179,7 +179,7 @@ final class WallpaperController: ObservableObject {
             incoming.forEach { $0.animator().alphaValue = 1 }
         }, completionHandler: {
             oldPlayers.values.forEach { $0.pause() }
-            oldWindows.forEach(Self.discard)
+            oldWindows.forEach { window in MainActor.assumeIsolated { Self.discard(window) } }
             // Прозрачность нужна только на время смены: непрозрачное окно система компонует гораздо дешевле.
             incoming.forEach {
                 $0.backgroundColor = .black
@@ -200,7 +200,7 @@ final class WallpaperController: ObservableObject {
             context.duration = 0.5
             list.forEach { $0.animator().alphaValue = 0 }
         }, completionHandler: {
-            list.forEach(Self.discard)
+            list.forEach { window in MainActor.assumeIsolated { Self.discard(window) } }
             completion()
         })
     }

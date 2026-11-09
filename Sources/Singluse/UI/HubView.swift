@@ -1,4 +1,5 @@
 import AVFoundation
+import Combine
 import ImageIO
 import ServiceManagement
 import SingluseCore

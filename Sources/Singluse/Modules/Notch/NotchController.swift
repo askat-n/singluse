@@ -265,9 +265,9 @@ final class NowPlaying: ObservableObject {
         let key = "\(bundleID)|\(title ?? "")|\(artist ?? "")"
         let needsArtwork = key != fetchedTrackKey
         fetchedTrackKey = key
-        Self.scriptQueue.async {
+        Self.scriptQueue.async { [weak self] in
             let details = PlayerScript.details(bundleID: bundleID, withArtwork: needsArtwork || includeTrack)
-            DispatchQueue.main.async { [weak self] in
+            DispatchQueue.main.async {
                 MainActor.assumeIsolated { self?.applyDetails(details, bundleID: bundleID) }
             }
         }
@@ -507,6 +507,14 @@ final class NotchInstance: ObservableObject {
             .merge(with: coordinator.timer.objectWillChange)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in self?.refreshMode() }
+            .store(in: &cancellables)
+        // Страницу убрали в настройках, пока чёлка была закрыта: при открытии покажется первая из оставшихся.
+        AppSettings.shared.$notchPages
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard let self, !self.visiblePages.contains(self.page), let first = self.visiblePages.first else { return }
+                if self.isExpanded { self.go(to: first) } else { self.page = first }
+            }
             .store(in: &cancellables)
         page = visiblePages.first ?? .music
         refreshMode()
@@ -1002,10 +1010,6 @@ private struct NotchExpandedView: View {
                 }
             }
             .id(instance.page)
-            .onChange(of: settings.notchPages) { _, _ in
-                // Страницу убрали в настройках: показываем первую из оставшихся.
-                if !pages.contains(instance.page), let first = instance.visiblePages.first { instance.go(to: first) }
-            }
             .transition(.asymmetric(
                 insertion: .move(edge: instance.slidesForward ? .trailing : .leading).combined(with: .opacity),
                 removal: .move(edge: instance.slidesForward ? .leading : .trailing).combined(with: .opacity)
