@@ -10,7 +10,7 @@ public struct ScrollSettings: Equatable, Sendable {
     public var acceleration: Double
     public var invert: Bool
 
-    public init(speed: Double = 1.2, smoothness: Double = 0.75, acceleration: Double = 0.25, invert: Bool = false) {
+    public init(speed: Double = 1.2, smoothness: Double = 0.6, acceleration: Double = 0.2, invert: Bool = false) {
         self.speed = speed
         self.smoothness = smoothness
         self.acceleration = acceleration
@@ -23,6 +23,12 @@ public struct ScrollSettings: Equatable, Sendable {
 /// а итоговый путь всегда совпадает с заказанным с точностью до пикселя.
 public struct ScrollEngine: Sendable {
     public static let pixelsPerLine = 48.0
+    /// Сколько пикселей в конце движения проходится с постоянной скоростью.
+    static let tailDistance = 28.0
+    /// Скорость этого хвоста, пикселей в секунду.
+    static let tailSpeed = 260.0
+    /// Наибольший запас пути, в щелчках колеса.
+    static let maximumTicksAhead = 9.0
 
     private struct Axis: Sendable {
         var goal = 0.0
@@ -32,7 +38,7 @@ public struct ScrollEngine: Sendable {
 
         var isIdle: Bool { goal == 0 && position == 0 && sent == 0 }
 
-        mutating func add(_ delta: Double) {
+        mutating func add(_ delta: Double, limit: Double) {
             guard delta != 0 else { return }
             // Смена направления сразу гасит остаток: страница не «тянет» в старую сторону.
             let remaining = goal - position
@@ -41,12 +47,23 @@ public struct ScrollEngine: Sendable {
                 filter = position
             }
             goal += delta
+            // Быстрое вращение не копит путь впрок: иначе страница ещё долго едет после того, как колесо остановилось.
+            let ahead = goal - position
+            if abs(ahead) > limit { goal = position + (ahead < 0 ? -limit : limit) }
         }
 
-        mutating func step(alpha: Double) -> Int32 {
+        mutating func step(alpha: Double, minimumStep: Double) -> Int32 {
             guard !isIdle else { return 0 }
             filter += (goal - filter) * alpha
-            position += (filter - position) * alpha
+            var move = (filter - position) * alpha
+            let remaining = goal - position
+            // Хвост: плавное затухание без конца превращается в медленное «доползание».
+            // Последние пиксели проходим с постоянной небольшой скоростью и останавливаемся чётко.
+            if abs(remaining) < ScrollEngine.tailDistance, abs(move) < minimumStep, (move < 0) == (remaining < 0) || move == 0 {
+                move = remaining < 0 ? -minimumStep : minimumStep
+            }
+            if abs(move) >= abs(remaining) { move = remaining }
+            position += move
             if abs(goal - position) < 0.5 { position = goal; filter = goal }
             let output = position.rounded() - sent
             sent += output
@@ -72,7 +89,7 @@ public struct ScrollEngine: Sendable {
     public var isIdle: Bool { y.isIdle && x.isIdle }
 
     /// Постоянная времени одной ступени фильтра.
-    var timeConstant: Double { 0.012 + settings.smoothness * 0.09 }
+    var timeConstant: Double { 0.012 + settings.smoothness * 0.06 }
 
     /// Добавляет щелчок колеса. `time` — монотонное время в секундах.
     public mutating func addWheel(deltaY: Int, deltaX: Int, at time: TimeInterval) {
@@ -80,8 +97,10 @@ public struct ScrollEngine: Sendable {
         lastWheelTime = time
         let sign = settings.invert ? -1.0 : 1.0
         let base = Self.pixelsPerLine * settings.speed * multiplier * sign
-        y.add(Double(deltaY) * base)
-        x.add(Double(deltaX) * base)
+        // Запас считается от обычного шага, без разгона: разгон ускоряет, но не растягивает остановку.
+        let limit = Self.pixelsPerLine * settings.speed * Self.maximumTicksAhead
+        y.add(Double(deltaY) * base, limit: limit)
+        x.add(Double(deltaX) * base, limit: limit)
     }
 
     private func accelerationMultiplier(at time: TimeInterval) -> Double {
@@ -95,8 +114,10 @@ public struct ScrollEngine: Sendable {
 
     /// Шаг симуляции. Возвращает целые пиксели; длинный кадр не даёт рывка.
     public mutating func step(dt: TimeInterval) -> (dy: Int32, dx: Int32) {
-        let alpha = 1 - exp(-min(max(dt, 0), 0.05) / timeConstant)
-        return (y.step(alpha: alpha), x.step(alpha: alpha))
+        let time = min(max(dt, 0), 0.025)
+        let alpha = 1 - exp(-time / timeConstant)
+        let minimumStep = Self.tailSpeed * time
+        return (y.step(alpha: alpha, minimumStep: minimumStep), x.step(alpha: alpha, minimumStep: minimumStep))
     }
 }
 
@@ -143,8 +164,8 @@ public enum WheelCalibrator {
             ticksPerSecond: rate,
             speed: speed,
             // Колесо с щелчками нуждается в большем сглаживании, у гладкого шаги и так мелкие.
-            smoothness: kind == .notched ? 0.75 : 0.45,
-            acceleration: kind == .notched ? 0.25 : 0
+            smoothness: kind == .notched ? 0.6 : 0.4,
+            acceleration: kind == .notched ? 0.2 : 0
         )
     }
 }

@@ -95,9 +95,9 @@ enum ScrollPreset: String, CaseIterable, Identifiable {
 
     var values: (speed: Double, smoothness: Double, acceleration: Double) {
         switch self {
-        case .smoothest: return (1.2, 0.75, 0.25)
-        case .balanced: return (1.3, 0.45, 0.35)
-        case .fast: return (1.8, 0.25, 0.6)
+        case .smoothest: return (1.2, 0.6, 0.2)
+        case .balanced: return (1.4, 0.4, 0.3)
+        case .fast: return (1.8, 0.22, 0.45)
         }
     }
 }
@@ -252,8 +252,8 @@ final class AppSettings: ObservableObject {
         "wallpaperLockFrame": false,
         "pauseWhenCovered": true,
         "scrollSpeed": 1.2,
-        "scrollSmoothness": 0.75,
-        "scrollAcceleration": 0.25,
+        "scrollSmoothness": 0.6,
+        "scrollAcceleration": 0.2,
         "scrollInvert": false,
         "dictationKeyCode": 61,
         "dictationLocale": "ru-RU",
@@ -369,6 +369,18 @@ final class AppSettings: ObservableObject {
             if !notchPages.contains("meeting") {
                 let order = ["music", "meeting", "shelf", "clips", "ai"]
                 notchPages = order.filter { notchPages.contains($0) || $0 == "meeting" }
+            }
+        }
+        // Новая физика прокрутки: старые значения мягкости давали долгий хвост после остановки колеса.
+        if !d.bool(forKey: "migratedScrollV2") {
+            d.set(true, forKey: "migratedScrollV2")
+            scrollSmoothness = min(scrollSmoothness, 0.6)
+            scrollAcceleration = min(scrollAcceleration, 0.2)
+            mouseProfiles = mouseProfiles.mapValues { profile in
+                var profile = profile
+                profile.smoothness = min(profile.smoothness, profile.kind == .notched ? 0.6 : 0.4)
+                profile.acceleration = min(profile.acceleration, 0.2)
+                return profile
             }
         }
         // Новые страницы чёлки появляются сами, остальной выбор человека не меняется.

@@ -9,9 +9,6 @@ import SingluseCore
 final class SmoothScrollController: NSObject, @unchecked Sendable {
     /// Этой меткой мы подписываем свои события, чтобы не перехватить их повторно.
     private static let marker: Int64 = 0x534E_4755
-    private static let phaseBegan: Int64 = 1
-    private static let phaseChanged: Int64 = 2
-    private static let phaseEnded: Int64 = 4
 
     private let lock = NSLock()
     private var pendingSettings = ScrollSettings()
@@ -27,7 +24,6 @@ final class SmoothScrollController: NSObject, @unchecked Sendable {
     private var engine = ScrollEngine()
     private var displayLink: CADisplayLink?
     private var lastStep: CFTimeInterval = 0
-    private var gestureInProgress = false
     private let eventSource = CGEventSource(stateID: .combinedSessionState)
     private var activationObserver: NSObjectProtocol?
 
@@ -178,19 +174,14 @@ final class SmoothScrollController: NSObject, @unchecked Sendable {
         let now = CACurrentMediaTime()
         let (dy, dx) = engine.step(dt: now - lastStep)
         lastStep = now
-        if dy != 0 || dx != 0 {
-            post(dy: dy, dx: dx, phase: gestureInProgress ? Self.phaseChanged : Self.phaseBegan)
-            gestureInProgress = true
-        }
+        if dy != 0 || dx != 0 { post(dy: dy, dx: dx) }
         if engine.isIdle {
-            if gestureInProgress { post(dy: 0, dx: 0, phase: Self.phaseEnded) }
-            gestureInProgress = false
             displayLink?.invalidate()
             displayLink = nil
         }
     }
 
-    private func post(dy: Int32, dx: Int32, phase: Int64) {
+    private func post(dy: Int32, dx: Int32) {
         guard let event = CGEvent(
             scrollWheelEvent2Source: eventSource,
             units: .pixel,
@@ -201,8 +192,8 @@ final class SmoothScrollController: NSObject, @unchecked Sendable {
         ) else { return }
         event.setIntegerValueField(.eventSourceUserData, value: Self.marker)
         event.setIntegerValueField(.scrollWheelEventIsContinuous, value: 1)
-        // Фазы жеста: приложения рисуют такую прокрутку так же гладко, как с трекпада.
-        event.setIntegerValueField(.scrollWheelEventScrollPhase, value: phase)
+        // Без фаз жеста: с ними браузер принимал колесо за трекпад, оттягивал страницу у края
+        // и при небольшом рывке вверх обновлял её (жест «потянуть, чтобы обновить»).
         // Shift + колесо должно остаться горизонтальной прокруткой.
         event.flags = CGEventSource.flagsState(.combinedSessionState)
         event.post(tap: .cgSessionEventTap)

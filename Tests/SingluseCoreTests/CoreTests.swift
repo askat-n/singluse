@@ -56,6 +56,26 @@ final class ScrollEngineTests: XCTestCase {
         XCTAssertEqual(Double(result.y), -ScrollEngine.pixelsPerLine * 1.2, accuracy: 1)
     }
 
+    func testStopsQuicklyAfterWheelStops() {
+        // Сильно раскрученное колесо: после последнего щелчка страница должна встать быстро, без долгого хвоста.
+        var engine = ScrollEngine(settings: ScrollSettings(speed: 1.9, smoothness: 0.6, acceleration: 0.2))
+        for i in 0..<30 { engine.addWheel(deltaY: 1, deltaX: 0, at: Double(i) * 0.03) }
+        let result = drain(&engine)
+        XCTAssertLessThan(Double(result.steps) / 120, 0.6, "motion must settle within 0.6 s")
+        XCTAssertLessThanOrEqual(Double(result.y), ScrollEngine.pixelsPerLine * 1.9 * ScrollEngine.maximumTicksAhead + 1)
+    }
+
+    func testTailDoesNotCrawl() {
+        var engine = ScrollEngine(settings: ScrollSettings(speed: 1, smoothness: 1, acceleration: 0))
+        engine.addWheel(deltaY: 1, deltaX: 0, at: 0)
+        var frames: [Int32] = []
+        while !engine.isIdle, frames.count < 2000 { frames.append(engine.step(dt: 1.0 / 120).dy) }
+        // В конце нет длинной серии кадров по одному пикселю.
+        let ones = frames.suffix(20).filter { $0 == 1 }.count
+        XCTAssertLessThan(ones, 6)
+        XCTAssertLessThan(frames.count, 50)
+    }
+
     func testFastClicksAccelerate() {
         var slow = ScrollEngine(settings: ScrollSettings(acceleration: 1))
         slow.addWheel(deltaY: 1, deltaX: 0, at: 0)
