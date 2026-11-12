@@ -168,6 +168,45 @@ public enum TranscriptGuard {
         return heard >= 6 && Double(wordCount(exact)) < Double(heard) * 0.6
     }
 
+    /// Насколько два текста совпадают по словам: длина общей подпоследовательности к длине большего, от 0 до 1.
+    public static func agreement(_ a: String, _ b: String) -> Double {
+        let x = words(a), y = words(b)
+        guard !x.isEmpty, !y.isEmpty else { return 0 }
+        var row = [Int](repeating: 0, count: y.count + 1)
+        for i in 1...x.count {
+            var diagonal = 0
+            for j in 1...y.count {
+                let above = row[j]
+                row[j] = same(x[i - 1], y[j - 1]) ? diagonal + 1 : max(row[j], row[j - 1])
+                diagonal = above
+            }
+        }
+        return Double(row[y.count]) / Double(max(x.count, y.count))
+    }
+
+    /// Выбирает лучшую из двух расшифровок одной записи (Whisper и вторая модель).
+    /// Третий, независимый движок Apple служит судьёй: побеждает тот, кто с ним заметно больше согласен.
+    /// При равенстве остаётся Whisper: он знает словарь человека и второй язык фразы.
+    public static func pickBest(whisper: String, other: String, reference: String, hints: [String] = []) -> String {
+        if other.isEmpty { return whisper }
+        if whisper.isEmpty { return other }
+        // Слово из личного словаря, которое услышал только Whisper, говорит в его пользу.
+        let lowerWhisper = whisper.lowercased(), lowerOther = other.lowercased()
+        let knowsHint = hints.contains { hint in
+            let h = hint.lowercased()
+            return h.count >= 3 && lowerWhisper.contains(h) && !lowerOther.contains(h)
+        }
+        if knowsHint { return whisper }
+        if reference.isEmpty {
+            // Без судьи меняем только явно оборванный текст.
+            return looksCut(exact: whisper, draft: other) ? other : whisper
+        }
+        if looksCut(exact: whisper, draft: reference), !looksCut(exact: other, draft: reference) { return other }
+        if looksCut(exact: other, draft: reference) { return whisper }
+        let margin = 0.08
+        return agreement(other, reference) > agreement(whisper, reference) + margin ? other : whisper
+    }
+
     /// Слова из конца черновика, которых нет в конце точного текста.
     /// nil, если концы совпадают или сравнить их не удаётся: тогда верим точному тексту.
     public static func missingTail(exact: String, draft: String) -> String? {

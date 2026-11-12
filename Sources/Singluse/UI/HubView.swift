@@ -299,6 +299,8 @@ private struct GeneralPage: View {
                 }
             }
 
+            UpdatesSection()
+
             if !neededPermissions.isEmpty {
                 Section {
                     ForEach(neededPermissions) { PermissionRow(permission: $0) }
@@ -314,6 +316,36 @@ private struct GeneralPage: View {
             }
         }
         .formStyle(.grouped)
+    }
+}
+
+private struct UpdatesSection: View {
+    @ObservedObject private var settings = AppSettings.shared
+    @ObservedObject private var updater = Coordinator.shared.updater
+
+    var body: some View {
+        Section {
+            Toggle("Проверять обновления автоматически", isOn: $settings.autoCheckUpdates)
+            LabeledContent {
+                if updater.state == .checking {
+                    ProgressView().controlSize(.small)
+                } else {
+                    Button("Проверить сейчас") { Task { await updater.check(manual: true) } }
+                }
+            } label: {
+                Text(String(format: L("Версия %@"), Updater.currentVersion.description))
+                Text(lastCheckText).font(.caption).foregroundStyle(.secondary)
+            }
+        } header: {
+            Text("Обновления")
+        } footer: {
+            Text("Раз в день Singluse смотрит, вышла ли новая версия на GitHub, и предлагает её установить.")
+        }
+    }
+
+    private var lastCheckText: String {
+        guard let date = updater.lastCheck else { return L("Ещё не проверялось") }
+        return String(format: L("Последняя проверка: %@"), date.formatted(.relative(presentation: .named)))
     }
 }
 
@@ -940,7 +972,10 @@ private struct DictationPage: View {
                     Text("Apple на этом Mac").tag("local")
                     Text("Облако OpenAI").tag("openai")
                 }
-                if settings.dictationEngine == "whisper" { WhisperRow() }
+                if settings.dictationEngine == "whisper" {
+                    WhisperRow()
+                    ParakeetRow()
+                }
                 if settings.dictationEngine == "openai", !ai.hasKey.contains(.openai) {
                     Label("Добавьте ключ OpenAI в разделе «ИИ-сервисы». Пока используется Mac.", systemImage: "exclamationmark.triangle.fill")
                         .font(.caption)
@@ -1323,6 +1358,44 @@ private struct WhisperRow: View {
         case .ready: return L("Голос не покидает этот Mac. Основана на открытых Whisper и WhisperKit.")
         case .loading: return L("После скачивания первый раз может занять несколько минут")
         default: return L("Скачивается один раз. Пока её нет, работает движок Apple.")
+        }
+    }
+}
+
+/// Вторая модель: Parakeet. Работает вместе с Whisper, лучший вариант выбирается сам.
+private struct ParakeetRow: View {
+    @ObservedObject private var parakeet = Coordinator.shared.parakeet
+    @State private var confirmingDelete = false
+
+    var body: some View {
+        LabeledContent {
+            switch parakeet.state {
+            case .downloading(let progress):
+                ProgressView(value: progress).frame(width: 140)
+            case .loading:
+                ProgressView().controlSize(.small)
+            case .ready:
+                Button("Удалить", role: .destructive) { confirmingDelete = true }
+            case .notDownloaded, .failed:
+                Button(parakeet.isDownloaded ? "Загрузить в память" : "Скачать") { parakeet.prepare() }
+            }
+        } label: {
+            Text(title)
+            Text("Parakeet от NVIDIA слушает каждую фразу вместе с Whisper; Singluse берёт более точный вариант. Новые версии модели скачиваются сами.")
+        }
+        .animation(.smooth, value: parakeet.state)
+        .confirmationDialog("Удалить вторую модель с диска?", isPresented: $confirmingDelete) {
+            Button("Удалить", role: .destructive) { parakeet.deleteModel() }
+        }
+    }
+
+    private var title: String {
+        switch parakeet.state {
+        case .downloading(let progress): return String(format: L("Вторая модель скачивается: %lld%%"), Int(progress * 100))
+        case .loading: return L("Вторая модель загружается")
+        case .ready: return L("Вторая модель готова")
+        case .notDownloaded: return parakeet.isDownloaded ? L("Вторая модель не загружена в память") : String(format: L("Вторая модель, %@"), ParakeetEngine.modelSizeTitle)
+        case .failed(let message): return message
         }
     }
 }

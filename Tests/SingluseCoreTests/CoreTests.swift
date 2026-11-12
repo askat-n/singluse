@@ -315,3 +315,58 @@ final class SignInLinkTests: XCTestCase {
         XCTAssertNil(SignInLink.resolve("просто текст", allowedDomains: domains))
     }
 }
+
+final class AppVersionTests: XCTestCase {
+    func testComparesNumerically() throws {
+        XCTAssertLessThan(try XCTUnwrap(AppVersion("1.9")), try XCTUnwrap(AppVersion("1.10")))
+        XCTAssertLessThan(try XCTUnwrap(AppVersion("1.0")), try XCTUnwrap(AppVersion("v1.0.1")))
+        XCTAssertEqual(try XCTUnwrap(AppVersion("v1.0")), try XCTUnwrap(AppVersion("1.0.0")))
+        XCTAssertNil(AppVersion("latest"))
+    }
+
+    func testParsesLatestRelease() throws {
+        let json = """
+        {"tag_name":"v1.1","html_url":"https://github.com/a/b/releases/tag/v1.1","body":"**Новое**","draft":false,"prerelease":false,
+         "assets":[{"name":"notes.txt","browser_download_url":"https://github.com/a/b/notes.txt"},
+                   {"name":"Singluse-1.1.zip","browser_download_url":"https://github.com/a/b/releases/download/v1.1/Singluse-1.1.zip"}]}
+        """
+        let release = try XCTUnwrap(ReleaseInfo.parse(Data(json.utf8)))
+        XCTAssertEqual(release.version.description, "1.1")
+        XCTAssertEqual(release.downloadURL?.lastPathComponent, "Singluse-1.1.zip")
+    }
+
+    func testRejectsPrereleaseAndForeignHosts() throws {
+        let pre = #"{"tag_name":"v2.0","html_url":"https://github.com/a/b","prerelease":true}"#
+        XCTAssertNil(ReleaseInfo.parse(Data(pre.utf8)))
+        let foreign = #"{"tag_name":"v2.0","html_url":"https://github.com/a/b","assets":[{"name":"x.zip","browser_download_url":"https://evil.example/x.zip"}]}"#
+        XCTAssertNil(try XCTUnwrap(ReleaseInfo.parse(Data(foreign.utf8))).downloadURL)
+    }
+}
+
+final class PickBestTests: XCTestCase {
+    func testKeepsWhisperWhenBothAgree() {
+        let w = "Привет, как дела у тебя сегодня"
+        XCTAssertEqual(TranscriptGuard.pickBest(whisper: w, other: "привет как дела у тебя сегодня", reference: "привет как дела у тебя сегодня"), w)
+    }
+
+    func testTakesOtherWhenWhisperHallucinates() {
+        let p = "давай встретимся завтра в три часа у входа"
+        let result = TranscriptGuard.pickBest(whisper: "давай встретимся завтра. Спасибо за просмотр, подписывайтесь на канал", other: p, reference: "давай встретимся завтра в три часа у входа")
+        XCTAssertEqual(result, p)
+    }
+
+    func testTakesOtherWhenWhisperIsCut() {
+        let p = "первое второе третье четвёртое пятое шестое седьмое восьмое"
+        XCTAssertEqual(TranscriptGuard.pickBest(whisper: "первое второе", other: p, reference: p), p)
+    }
+
+    func testPersonalVocabularyFavoursWhisper() {
+        let w = "открой Singluse и проверь"
+        XCTAssertEqual(TranscriptGuard.pickBest(whisper: w, other: "открой синглюз и проверь", reference: "открой синглюз и проверь", hints: ["Singluse"]), w)
+    }
+
+    func testAgreementRange() {
+        XCTAssertEqual(TranscriptGuard.agreement("a b c", "a b c"), 1)
+        XCTAssertEqual(TranscriptGuard.agreement("", "a"), 0)
+    }
+}

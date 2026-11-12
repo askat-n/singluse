@@ -375,3 +375,36 @@ Désactivez pour rétablir le fond d’écran de macOS sur tous les écrans et b
 Monter
 Descendre
 Les pages activées apparaissent en premier, dans l’ordre où elles défilent dans l’encoche. Réorganisez-les avec les flèches ou en les faisant glisser.
+Impossible de rechercher les mises à jour. Vérifiez votre connexion Internet.
+Mise à jour de Singluse
+Vous êtes à jour
+Singluse %@ est la version la plus récente.
+Impossible de remplacer l'app à son emplacement. Déplacez Singluse dans le dossier Applications et réessayez, ou téléchargez la nouvelle version depuis la page de publication.
+Impossible de télécharger la mise à jour. Vérifiez votre connexion Internet.
+Impossible d'installer la mise à jour. Téléchargez la nouvelle version depuis la page de publication.
+Le fichier téléchargé n'a pas passé la vérification de signature et n'a donc pas été installé.
+Une nouvelle version de Singluse est disponible
+Téléchargement de la mise à jour…
+Installation…
+La mise à jour a échoué
+Recherche de mises à jour…
+La version %@ est prête à être installée. Vous avez la %@.
+Singluse redémarrera tout seul quand tout sera prêt.
+Ignorer cette version
+Plus tard
+Ouvrir la page de publication
+Rechercher les mises à jour…
+Rechercher automatiquement les mises à jour
+Rechercher maintenant
+Version %@
+Mises à jour
+Une fois par jour, Singluse vérifie sur GitHub si une nouvelle version est sortie et propose de l'installer.
+Pas encore vérifié
+Dernière vérification : %@
+Téléchargement du second modèle : %lld%%
+Chargement du second modèle
+Second modèle prêt
+Second modèle non chargé en mémoire
+Second modèle, %@
+Parakeet de NVIDIA écoute chaque phrase avec Whisper, et Singluse garde le résultat le plus précis. Les nouvelles versions du modèle se téléchargent toutes seules.
+Supprimer le second modèle du disque ?

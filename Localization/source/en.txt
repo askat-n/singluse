@@ -375,3 +375,36 @@ Turn off to restore your macOS wallpaper on every display and desktop. Singluse 
 Move Up
 Move Down
 Enabled pages are listed first, in the order you swipe through them in the notch. Reorder them with the arrows or by dragging.
+Couldn't check for updates. Check your internet connection.
+Singluse Update
+You're up to date
+Singluse %@ is the newest version.
+Can't replace the app where it is. Move Singluse to the Applications folder and try again, or download the new version from the release page.
+Couldn't download the update. Check your internet connection.
+Couldn't install the update. Download the new version from the release page.
+The downloaded file failed the signature check, so it wasn't installed.
+A new version of Singluse is available
+Downloading update…
+Installing…
+Update failed
+Checking for updates…
+Version %@ is ready to install. You have %@.
+Singluse will relaunch on its own when everything is ready.
+Skip This Version
+Later
+Open Release Page
+Check for Updates…
+Automatically check for updates
+Check Now
+Version %@
+Updates
+Once a day Singluse checks GitHub for a new version and offers to install it.
+Not checked yet
+Last checked: %@
+Second model downloading: %lld%%
+Second model is loading
+Second model ready
+Second model not loaded into memory
+Second model, %@
+NVIDIA Parakeet listens to every phrase alongside Whisper, and Singluse keeps the more accurate result. New model versions download automatically.
+Delete the second model from disk?

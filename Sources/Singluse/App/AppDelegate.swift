@@ -13,6 +13,16 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMe
         NSApp.mainMenu = makeMainMenu()
         NSApp.setActivationPolicy(.accessory)
         Coordinator.shared.start()
+        Coordinator.shared.updater.start()
+        // Служебный режим: проверка и установка обновления без окна — так весь путь можно проверить из терминала.
+        if CommandLine.arguments.contains("--test-update") {
+            Task {
+                let updater = Coordinator.shared.updater
+                await updater.check(manual: false)
+                print("update state:", updater.state)
+                if case .available(let release) = updater.state { updater.install(release) }
+            }
+        }
         applyMenuBarIcon()
         // Значок в строке меню можно спрятать; настройка применяется сразу.
         menuBarObserver = AppSettings.shared.$showMenuBarIcon
@@ -130,7 +140,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMe
             menu.addItem(row)
         }
         menu.addItem(.separator())
+        let update = NSMenuItem(title: L("Проверить обновления…"), action: #selector(checkForUpdates), keyEquivalent: "")
+        update.target = self
+        menu.addItem(update)
         menu.addItem(NSMenuItem(title: L("Выйти"), action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+    }
+
+    @objc func checkForUpdates() {
+        Task { await Coordinator.shared.updater.check(manual: true) }
     }
 
     @objc private func toggleMeeting() {
@@ -152,6 +169,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMe
         let appItem = NSMenuItem()
         main.addItem(appItem)
         let appMenu = NSMenu()
+        let update = NSMenuItem(title: L("Проверить обновления…"), action: #selector(checkForUpdates), keyEquivalent: "")
+        update.target = self
+        appMenu.addItem(update)
+        appMenu.addItem(.separator())
         appMenu.addItem(NSMenuItem(title: L("Выйти из Singluse"), action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         appItem.submenu = appMenu
 

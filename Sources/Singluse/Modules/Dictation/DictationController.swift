@@ -673,13 +673,24 @@ final class DictationController: ObservableObject {
             tail = await spec.task.value
         }
         utterance.speculation = nil
+        // Parakeet слушает ту же запись параллельно: он быстрый и успевает раньше, чем закончит Whisper.
+        let parakeet = Coordinator.shared.parakeet
+        var parakeetTask: Task<String, Never>?
+        if parakeet.isReady, ParakeetEngine.supports(language), second.map(ParakeetEngine.supports) ?? true {
+            let all = session.floatSamples()
+            // При смеси языков подсказка алфавита мешала бы: английские слова ушли бы в кириллицу.
+            let hint = (second?.isEmpty ?? true) ? language : nil
+            parakeetTask = Task { (try? await parakeet.transcribe(samples: all, language: hint)) ?? "" }
+        }
         if tail?.isEmpty != false {
             let heard = !session.heardText.isEmpty
             tail = (try? await whisper.transcribe(samples: remainder, language: language, second: second, hints: hints, context: utterance.confirmedText, heardByApple: heard)) ?? ""
         }
         let first = [utterance.confirmedText, tail ?? ""].filter { !$0.isEmpty }.joined(separator: " ")
         let apple = await appleTask.value
-        var text = first
+        let other = await parakeetTask?.value ?? ""
+        // Из двух моделей берём ту, что лучше совпала с независимым распознаванием Apple.
+        var text = TranscriptGuard.pickBest(whisper: first, other: other, reference: apple, hints: hints)
         var retried = false
         if !apple.isEmpty, TranscriptGuard.looksCut(exact: text, draft: apple) || TranscriptGuard.missingTail(exact: text, draft: apple) != nil {
             retried = true
@@ -695,7 +706,7 @@ final class DictationController: ObservableObject {
         if text.isEmpty { text = apple }
         if settings.dictationKeepHistory {
             let seconds = Double(session.floatSamples().count) / 16000
-            DictationTrace.write(seconds: seconds, apple: apple, whisper: first, final: text, retried: retried)
+            DictationTrace.write(seconds: seconds, apple: apple, whisper: first, parakeet: other, final: text, retried: retried)
         }
         return text
     }
@@ -1212,9 +1223,9 @@ enum DictationTrace {
             .appendingPathComponent("Singluse/dictation-trace.log")
     }
 
-    static func write(seconds: Double, apple: String, whisper: String, final: String, retried: Bool) {
-        let line = String(format: "%@ %.1fs retried=%@\n  apple: %@\n  whisper: %@\n  final: %@\n",
-                          ISO8601DateFormatter().string(from: Date()), seconds, retried ? "yes" : "no", apple, whisper, final)
+    static func write(seconds: Double, apple: String, whisper: String, parakeet: String, final: String, retried: Bool) {
+        let line = String(format: "%@ %.1fs retried=%@\n  apple: %@\n  whisper: %@\n  parakeet: %@\n  final: %@\n",
+                          ISO8601DateFormatter().string(from: Date()), seconds, retried ? "yes" : "no", apple, whisper, parakeet, final)
         guard let data = line.data(using: .utf8) else { return }
         var stored = (try? Data(contentsOf: file)) ?? Data()
         stored.append(data)
@@ -1257,6 +1268,10 @@ enum SpeechBenchmark {
         let whisper = WhisperEngine()
         await whisper.prepareNow()
         print("state:", whisper.state)
+        let parakeet = ParakeetEngine()
+        let loadStart = Date()
+        await parakeet.prepareNow()
+        print("parakeet:", parakeet.state, String(format: "%.1fs", Date().timeIntervalSince(loadStart)))
         for path in paths {
             if ProcessInfo.processInfo.environment["SW_TIMING"] != nil {
                 let session = SpeechSession(locale: Locale(identifier: "ru-RU"), vocabulary: [], keepAudio: true) { _ in }
@@ -1277,6 +1292,13 @@ enum SpeechBenchmark {
                 let start = Date()
                 let text = (try? await whisper.transcribe(samples: samples, language: "ru", second: second, heardByApple: true)) ?? "ERR"
                 print(String(format: "[%@ second=%@ %.2fs/%.1fs] ", URL(fileURLWithPath: path).lastPathComponent, second ?? "-", Date().timeIntervalSince(start), Double(samples.count) / 16000), TranscriptCleaner.clean(text))
+            }
+            if parakeet.isReady {
+                for hint in ["ru", nil] as [String?] {
+                    let start = Date()
+                    let text = (try? await parakeet.transcribe(samples: samples, language: hint)) ?? "ERR"
+                    print(String(format: "[%@ parakeet hint=%@ %.2fs] ", URL(fileURLWithPath: path).lastPathComponent, hint ?? "-", Date().timeIntervalSince(start)), TranscriptCleaner.clean(text))
+                }
             }
         }
         for path in paths {

@@ -26,8 +26,8 @@ cat > "$CONTENTS/Info.plist" <<'PLIST'
     <key>CFBundleName</key><string>Singluse</string>
     <key>CFBundleDisplayName</key><string>Singluse</string>
     <key>CFBundlePackageType</key><string>APPL</string>
-    <key>CFBundleShortVersionString</key><string>1.0</string>
-    <key>CFBundleVersion</key><string>2</string>
+    <key>CFBundleShortVersionString</key><string>1.1</string>
+    <key>CFBundleVersion</key><string>3</string>
     <key>CFBundleIconFile</key><string>AppIcon</string>
     <key>CFBundleDevelopmentRegion</key><string>ru</string>
     <key>CFBundleLocalizations</key><array><string>ru</string><string>en</string><string>es</string><string>zh-Hans</string><string>ar</string><string>fr</string><string>vi</string><string>ko</string><string>tl</string></array>

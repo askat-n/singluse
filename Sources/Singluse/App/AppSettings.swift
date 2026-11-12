@@ -126,7 +126,14 @@ final class AppSettings: ObservableObject {
         set { d.set(newValue, forKey: "launchedBefore") }
     }
 
+    /// Версия, которую человек попросил не предлагать.
+    var skippedUpdateVersion: String? {
+        get { d.string(forKey: "skippedUpdateVersion") }
+        set { d.set(newValue, forKey: "skippedUpdateVersion") }
+    }
+
     // Основные
+    @Published var autoCheckUpdates: Bool { didSet { d.set(autoCheckUpdates, forKey: "autoCheckUpdates") } }
     @Published var animationScale: Double { didSet { d.set(animationScale, forKey: "animationScale") } }
     @Published var showMenuBarIcon: Bool { didSet { d.set(showMenuBarIcon, forKey: "showMenuBarIcon") } }
 
@@ -242,6 +249,7 @@ final class AppSettings: ObservableObject {
     private static let defaults: [String: Any] = [
         "animationScale": 1.0,
         "showMenuBarIcon": true,
+        "autoCheckUpdates": true,
         "wallpaperSource": "shader:aurora",
         "wallpaperSpeed": 1.0,
         "wallpaperFPS": 60,
@@ -300,6 +308,7 @@ final class AppSettings: ObservableObject {
         d.register(defaults: Self.defaults)
         disabledModules = Set(d.stringArray(forKey: "disabledModules") ?? [])
         animationScale = d.double(forKey: "animationScale")
+        autoCheckUpdates = d.bool(forKey: "autoCheckUpdates")
         showMenuBarIcon = d.bool(forKey: "showMenuBarIcon")
         wallpaperSource = d.string(forKey: "wallpaperSource") ?? "shader:aurora"
         videoLibrary = d.stringArray(forKey: "videoLibrary") ?? []

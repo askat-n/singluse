@@ -375,3 +375,36 @@ Desactívalo para restaurar el fondo de macOS en todas las pantallas y escritori
 Subir
 Bajar
 Las páginas activadas aparecen primero, en el orden en que se deslizan en la muesca. Cambia el orden con las flechas o arrastrando.
+No se pudieron buscar actualizaciones. Comprueba tu conexión a internet.
+Actualización de Singluse
+Tienes la última versión
+Singluse %@ es la versión más reciente.
+No se puede reemplazar la app en su ubicación. Mueve Singluse a la carpeta Aplicaciones e inténtalo de nuevo, o descarga la nueva versión desde la página de la versión.
+No se pudo descargar la actualización. Comprueba tu conexión a internet.
+No se pudo instalar la actualización. Descarga la nueva versión desde la página de la versión.
+El archivo descargado no superó la verificación de firma, así que no se instaló.
+Hay una nueva versión de Singluse
+Descargando actualización…
+Instalando…
+La actualización falló
+Buscando actualizaciones…
+La versión %@ está lista para instalarse. Tienes la %@.
+Singluse se reiniciará solo cuando todo esté listo.
+Omitir esta versión
+Más tarde
+Abrir página de la versión
+Buscar actualizaciones…
+Buscar actualizaciones automáticamente
+Buscar ahora
+Versión %@
+Actualizaciones
+Una vez al día Singluse busca una nueva versión en GitHub y ofrece instalarla.
+Aún no se ha comprobado
+Última comprobación: %@
+Descargando el segundo modelo: %lld%%
+Cargando el segundo modelo
+Segundo modelo listo
+El segundo modelo no está cargado en memoria
+Segundo modelo, %@
+Parakeet de NVIDIA escucha cada frase junto con Whisper y Singluse se queda con el resultado más preciso. Las nuevas versiones del modelo se descargan solas.
+¿Eliminar el segundo modelo del disco?

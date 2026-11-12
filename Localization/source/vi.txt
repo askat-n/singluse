@@ -375,3 +375,36 @@ Tắt để khôi phục hình nền macOS trên mọi màn hình và bàn làm 
 Lên trên
 Xuống dưới
 Các trang đã bật nằm ở trên, theo thứ tự lướt trong tai thỏ. Đổi thứ tự bằng mũi tên hoặc kéo thả.
+Không thể kiểm tra bản cập nhật. Hãy kiểm tra kết nối internet.
+Cập nhật Singluse
+Bạn đang dùng bản mới nhất
+Singluse %@ là phiên bản mới nhất.
+Không thể thay thế ứng dụng tại vị trí hiện tại. Hãy chuyển Singluse vào thư mục Ứng dụng rồi thử lại, hoặc tải phiên bản mới từ trang phát hành.
+Không thể tải bản cập nhật. Hãy kiểm tra kết nối internet.
+Không thể cài đặt bản cập nhật. Hãy tải phiên bản mới từ trang phát hành.
+Tệp đã tải không vượt qua kiểm tra chữ ký nên chưa được cài đặt.
+Đã có phiên bản Singluse mới
+Đang tải bản cập nhật…
+Đang cài đặt…
+Cập nhật không thành công
+Đang kiểm tra bản cập nhật…
+Phiên bản %@ đã sẵn sàng để cài đặt. Bạn đang dùng %@.
+Singluse sẽ tự khởi động lại khi mọi thứ sẵn sàng.
+Bỏ qua phiên bản này
+Để sau
+Mở trang phát hành
+Kiểm tra bản cập nhật…
+Tự động kiểm tra bản cập nhật
+Kiểm tra ngay
+Phiên bản %@
+Cập nhật
+Mỗi ngày một lần, Singluse kiểm tra phiên bản mới trên GitHub và đề nghị cài đặt.
+Chưa kiểm tra
+Lần kiểm tra cuối: %@
+Đang tải mô hình thứ hai: %lld%%
+Đang nạp mô hình thứ hai
+Mô hình thứ hai đã sẵn sàng
+Mô hình thứ hai chưa được nạp vào bộ nhớ
+Mô hình thứ hai, %@
+Parakeet của NVIDIA nghe từng câu cùng Whisper, Singluse giữ kết quả chính xác hơn. Phiên bản mô hình mới sẽ tự tải về.
+Xóa mô hình thứ hai khỏi ổ đĩa?

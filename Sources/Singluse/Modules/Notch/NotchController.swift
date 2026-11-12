@@ -550,10 +550,10 @@ final class NotchInstance: ObservableObject {
         AppSettings.shared.notchPages.compactMap(NotchPage.init(rawValue:))
     }
 
-    func go(to newPage: NotchPage) {
+    func go(to newPage: NotchPage, forward: Bool? = nil) {
         let pages = visiblePages
         guard newPage != page else { return }
-        slidesForward = (pages.firstIndex(of: newPage) ?? 0) > (pages.firstIndex(of: page) ?? 0)
+        slidesForward = forward ?? ((pages.firstIndex(of: newPage) ?? 0) > (pages.firstIndex(of: page) ?? 0))
         withAnimation(Motion.panel) { page = newPage }
     }
 
@@ -575,13 +575,13 @@ final class NotchInstance: ObservableObject {
         if !swipeUsed, abs(swipeDistance) > 36 {
             swipeUsed = true
             let pages = visiblePages
-            if let index = pages.firstIndex(of: page) {
-                let next = index + (swipeDistance < 0 ? 1 : -1)
-                if pages.indices.contains(next) {
-                    go(to: pages[next])
-                    if AppSettings.shared.notchHaptics {
-                        NSHapticFeedbackManager.defaultPerformer.perform(.alignment, performanceTime: .now)
-                    }
+            // Страницы идут по кругу: за последней снова первая, перед первой — последняя.
+            if let index = pages.firstIndex(of: page), pages.count > 1 {
+                let forward = swipeDistance < 0
+                let next = (index + (forward ? 1 : -1) + pages.count) % pages.count
+                go(to: pages[next], forward: forward)
+                if AppSettings.shared.notchHaptics {
+                    NSHapticFeedbackManager.defaultPerformer.perform(.alignment, performanceTime: .now)
                 }
             }
         }
@@ -603,10 +603,18 @@ final class NotchInstance: ObservableObject {
     private func releaseKeyboard() {
         guard panel.isKeyWindow else { return }
         panel.makeFirstResponder(nil)
+        // Чёлка не активирует Singluse, поэтому приложение человека и так остаётся активным —
+        // нужно лишь вернуть «ключевое» окно его верхнему окну. Раньше для этого чёлка на миг пряталась
+        // и показывалась снова, и это было видно как мигание.
+        if let app = NSWorkspace.shared.frontmostApplication, app != NSRunningApplication.current,
+           let window = Self.topWindow(of: app.processIdentifier),
+           WindowActivation.bringToFront(id: window, pid: app.processIdentifier) {
+            return
+        }
         if let app = NSWorkspace.shared.frontmostApplication, app != NSRunningApplication.current {
             app.activate()
         }
-        // Если система не отдала фокус сама, забираем его уже после анимации, когда рывка не видно.
+        // Запасной путь, если окна у приложения нет: забираем фокус уже после анимации, когда рывка не видно.
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak self] in
             MainActor.assumeIsolated {
                 guard let self, !self.isExpanded, self.panel.isKeyWindow else { return }
@@ -614,6 +622,15 @@ final class NotchInstance: ObservableObject {
                 self.panel.orderFrontRegardless()
             }
         }
+    }
+
+    /// Верхнее обычное окно приложения на текущем рабочем столе.
+    private static func topWindow(of pid: pid_t) -> CGWindowID? {
+        let list = CGWindowListCopyWindowInfo([.optionOnScreenOnly, .excludeDesktopElements], kCGNullWindowID) as? [[String: Any]] ?? []
+        let window = list.first {
+            ($0[kCGWindowOwnerPID as String] as? pid_t) == pid && ($0[kCGWindowLayer as String] as? Int) == 0
+        }
+        return (window?[kCGWindowNumber as String] as? NSNumber).map { CGWindowID($0.uint32Value) }
     }
 
     private func refreshMode() {

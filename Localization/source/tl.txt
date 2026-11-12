@@ -375,3 +375,36 @@ I-off para ibalik ang wallpaper ng macOS sa bawat display at desktop. Hindi na i
 Itaas
 Ibaba
 Nauuna ang mga naka-on na pahina, ayon sa pagkakasunod kapag nag-swipe sa notch. Ayusin ang pagkakasunod gamit ang mga arrow o sa pag-drag.
+Hindi ma-check ang mga update. Tingnan ang iyong koneksyon sa internet.
+Update ng Singluse
+Pinakabagong bersyon na ang gamit mo
+Ang Singluse %@ ang pinakabagong bersyon.
+Hindi mapalitan ang app sa kinalalagyan nito. Ilipat ang Singluse sa Applications folder at subukang muli, o i-download ang bagong bersyon mula sa release page.
+Hindi ma-download ang update. Tingnan ang iyong koneksyon sa internet.
+Hindi ma-install ang update. I-download ang bagong bersyon mula sa release page.
+Hindi pumasa sa signature check ang na-download na file, kaya hindi ito na-install.
+May bagong bersyon ng Singluse
+Dina-download ang update…
+Ini-install…
+Nabigo ang update
+Tinitingnan ang mga update…
+Handa nang i-install ang bersyon %@. Ang gamit mo ay %@.
+Kusang magre-relaunch ang Singluse kapag handa na ang lahat.
+Laktawan ang bersyong ito
+Mamaya
+Buksan ang release page
+Tingnan ang mga update…
+Awtomatikong tingnan ang mga update
+Tingnan ngayon
+Bersyon %@
+Mga update
+Isang beses kada araw, tinitingnan ng Singluse sa GitHub kung may bagong bersyon at inaalok itong i-install.
+Hindi pa natitingnan
+Huling tiningnan: %@
+Dina-download ang ikalawang model: %lld%%
+Nilo-load ang ikalawang model
+Handa na ang ikalawang model
+Hindi naka-load sa memory ang ikalawang model
+Ikalawang model, %@
+Pinapakinggan ng NVIDIA Parakeet ang bawat parirala kasama ng Whisper, at pinipili ng Singluse ang mas tumpak na resulta. Kusang nada-download ang mga bagong bersyon ng model.
+Burahin ang ikalawang model sa disk?

@@ -16,11 +16,13 @@ final class Coordinator: ObservableObject {
     let ai = AIManager()
     let mice = MouseMonitor()
     let whisper = WhisperEngine()
+    let parakeet = ParakeetEngine()
     let meetings = MeetingRecorder()
     let lockFrame = LockScreenFrame()
     let timer = NotchTimer()
     let translator = NotchTranslator()
     let limits = AILimitsMonitor()
+    let updater = Updater()
     /// Страница настроек, которую попросили открыть из чёлки.
     @Published var requestedHubPage: HubPage?
 
@@ -73,8 +75,11 @@ final class Coordinator: ObservableObject {
         // Модель держится в памяти, только пока она нужна; скачивание запускается лишь по кнопке.
         if isRunning(.dictation), settings.dictationEngine == "whisper" {
             if whisper.isDownloaded { whisper.prepare() }
+            // Вторая модель работает вместе с Whisper: раз человек уже выбрал модели на Mac, она подтягивается сама.
+            if whisper.isDownloaded || parakeet.isDownloaded { parakeet.prepare() }
         } else {
             whisper.unload()
+            parakeet.unload()
         }
         dock.update(active: isRunning(.dock))
         switcher.update(active: isRunning(.dock) && settings.windowSwitcher)
